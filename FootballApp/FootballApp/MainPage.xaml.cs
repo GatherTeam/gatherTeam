@@ -26,12 +26,12 @@ namespace FootballApp
         //Переход на страницу для создания аккаунта
         private void СreateAccount_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/CreateAccount.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/../Views/CreateAccount.xaml", UriKind.Relative));
         }
         //Переход на страницу для входа со своего аккаунта
         private void Enter_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/EnterPage.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/../Views/EnterPage.xaml", UriKind.Relative));
         }
 
         private void EnterWithVK_Click(object sender, RoutedEventArgs e)

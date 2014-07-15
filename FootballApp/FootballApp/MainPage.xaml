@@ -70,14 +70,6 @@
             </Grid.Background>
             <!--Выбор: создать аккаунт или войти, включая различные соц.сети-->
             <Button Name="СreateAccount" Content="Создать аккаунт" Click="СreateAccount_Click" Margin="-26,30,199,487" Foreground="White" Grid.ColumnSpan="2" BorderBrush="Transparent" />
-            <HyperlinkButton  
-              Name="MyHyperlinkButton" 
-              FontSize="18" 
-              Width="175" 
-              Height="75" 
-              Margin="141,350,140,182" 
-              NavigateUri="/Account.xaml" Grid.ColumnSpan="2"/>
-            
             <Button Name="Enter" Content="Войти" Click="Enter_Click" Margin="-72,170,24,347" Foreground="White" BorderBrush="Transparent" />
             <Button Name="EnterWithVK" Content="Войти через vk" Click="EnterWithVK_Click" Margin="-26,335,199,182" Foreground="White" BorderBrush="Transparent" Grid.ColumnSpan="2" />
             <Button Name="EnterWithFB" Content="Войти через facebook" Click="EnterWithFB_Click" Margin="10,255,163,262" Foreground="White" BorderBrush="Transparent" Grid.ColumnSpan="2" />      

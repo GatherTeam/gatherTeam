@@ -90,16 +90,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Account.xaml.cs">
+    <Compile Include="ActionCommand.cs" />
+    <Compile Include="Model\AccountModel.cs" />
+    <Compile Include="ViewModel\AccountViewModel.cs" />
+    <Compile Include="Views\Account.xaml.cs">
       <DependentUpon>Account.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="CreateAccount.xaml.cs">
-      <DependentUpon>CreateAccount.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EnterPage.xaml.cs">
+    <Compile Include="Views\CreateAccount.xaml.cs">
+      <DependentUpon>CreateAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EnterPage.xaml.cs">
       <DependentUpon>EnterPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="LocalizedStrings.cs" />
@@ -118,15 +121,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Page Include="Account.xaml">
+    <Page Include="Views\Account.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CreateAccount.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Views\CreateAccount.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
-    <Page Include="EnterPage.xaml">
+    <Page Include="Views\EnterPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
