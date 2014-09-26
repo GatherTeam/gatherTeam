@@ -10,7 +10,7 @@
 
     <Grid>
         <TextBox PlaceholderText="Login" HorizontalAlignment="Left" Margin="94,59,0,0" TextWrapping="Wrap" Text="{Binding Path=Login}" VerticalAlignment="Top" Width="243"/>
-        <TextBox PlaceholderText="Email" HorizontalAlignment="Left" Margin="94,125,0,0" TextWrapping="Wrap" Text="{Binding Path=Email}" VerticalAlignment="Top" RenderTransformOrigin="-2.061,-2.742" Width="243"/>
+        <TextBox PlaceholderText="Email" HorizontalAlignment="Left" Margin="94,125,0,0" TextWrapping="Wrap" Text="{Binding Path=Email}" VerticalAlignment="Top" Width="243"/>
         <PasswordBox PlaceholderText="Password" Password="{Binding Password}" HorizontalAlignment="Left" Margin="94,259,0,0" VerticalAlignment="Top" Width="243"/>
         <PasswordBox PlaceholderText="Confirm password" Password="{Binding ConfirmPasswod}" HorizontalAlignment="Left" Margin="94,315,0,0" VerticalAlignment="Top" Width="243"/>
         <TextBox PlaceholderText="Phone" HorizontalAlignment="Left" Margin="94,191,0,0" TextWrapping="Wrap" Text="{Binding Path=Phone}" VerticalAlignment="Top" Width="243"/>

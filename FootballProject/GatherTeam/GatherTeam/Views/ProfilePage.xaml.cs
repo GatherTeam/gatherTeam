@@ -35,5 +35,10 @@ namespace GatherTeam.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
         }
+
+        private void CreateGameClick(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof (CreateGamePage));
+        }
     }
 }

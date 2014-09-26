@@ -14,17 +14,19 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
+using GatherTeam.ViewModels;
 
 namespace GatherTeam.Views
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class StartPage : Page
+    public sealed partial class CreateGamePage : Page
     {
-        public StartPage()
+        public CreateGamePage()
         {
             this.InitializeComponent();
+            DataContext = new CreateGameVM();
         }
 
         /// <summary>
@@ -34,11 +36,6 @@ namespace GatherTeam.Views
         /// This parameter is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-        }
-
-        private void EnterClick(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof (ProfilePage));
         }
     }
 }

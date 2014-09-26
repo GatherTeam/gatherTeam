@@ -10,7 +10,7 @@
 
     <Grid>
         <Button Content="Редактировать профиль" HorizontalAlignment="Left" Margin="89,251,0,0" VerticalAlignment="Top"/>
-        <Button Content="Создать игру" HorizontalAlignment="Left" Margin="89,139,0,0" VerticalAlignment="Top" Width="232"/>
+        <Button Content="Создать игру" Click="CreateGameClick" HorizontalAlignment="Left" Margin="89,139,0,0" VerticalAlignment="Top" Width="232"/>
         <Button Content="Найти игру" HorizontalAlignment="Left" Margin="89,78,0,0" VerticalAlignment="Top" Width="232"/>
         <Button Content="Мои игры" HorizontalAlignment="Left" Margin="89,195,0,0" VerticalAlignment="Top" Width="232"/>
     </Grid>
