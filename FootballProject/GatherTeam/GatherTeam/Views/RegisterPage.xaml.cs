@@ -21,9 +21,9 @@ namespace GatherTeam
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class RegisterView : Page
+    public sealed partial class RegisterPage : Page
     {
-        public RegisterView()
+        public RegisterPage()
         {
             this.InitializeComponent();
             this.DataContext = new UserViewModel();

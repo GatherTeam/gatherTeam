@@ -9,10 +9,17 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button Content="Создать" HorizontalAlignment="Left" Margin="163,368,0,0" VerticalAlignment="Top"/>
-        <ComboBox PlaceholderText="Формат игры" ItemsSource="{Binding Path=GameFormats}" HorizontalAlignment="Left" Margin="130,60,0,0" VerticalAlignment="Top" Width="165"/>
-        <ComboBox PlaceholderText="Адрес" HorizontalAlignment="Left" Margin="130,171,0,0" VerticalAlignment="Top" Width="165"/>
-        <TimePicker HorizontalAlignment="Left" Margin="130,261,0,0" VerticalAlignment="Top" Width="165"/>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="4" Content="Создать" Style="{StaticResource ButtonStyle}"/>
+        <ComboBox Grid.Row="1" PlaceholderText="Формат игры" ItemsSource="{Binding Path=GameFormats}" Style="{StaticResource ComboBoxStyle}"/>
+        <ComboBox Grid.Row="2" PlaceholderText="Адрес" Style="{StaticResource ComboBoxStyle}"/>
+        <TimePicker Grid.Row="3" Style="{StaticResource TimePickerStyle}"/>
 
     </Grid>
 </Page>

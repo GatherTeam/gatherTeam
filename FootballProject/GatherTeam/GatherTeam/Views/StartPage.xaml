@@ -9,8 +9,12 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button Click="EnterClick" Content="Вход" HorizontalAlignment="Left" Margin="144,93,0,0" VerticalAlignment="Top" Width="131"/>
-        <Button Content="Регистрация" HorizontalAlignment="Left" Margin="144,235,0,0" VerticalAlignment="Top"/>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Click="EnterClick" Content="Вход" Grid.Row="0" Style="{StaticResource ButtonStyle}" />
+        <Button Click="RegisterClick" Content="Регистрация" Grid.Row="1" Style="{StaticResource ButtonStyle}"/>
 
     </Grid>
 </Page>

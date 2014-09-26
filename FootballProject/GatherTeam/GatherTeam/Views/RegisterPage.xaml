@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="GatherTeam.RegisterView"
+    x:Class="GatherTeam.RegisterPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:GatherTeam"
@@ -9,11 +9,21 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBox PlaceholderText="Login" HorizontalAlignment="Left" Margin="94,59,0,0" TextWrapping="Wrap" Text="{Binding Path=Login}" VerticalAlignment="Top" Width="243"/>
-        <TextBox PlaceholderText="Email" HorizontalAlignment="Left" Margin="94,125,0,0" TextWrapping="Wrap" Text="{Binding Path=Email}" VerticalAlignment="Top" Width="243"/>
-        <PasswordBox PlaceholderText="Password" Password="{Binding Password}" HorizontalAlignment="Left" Margin="94,259,0,0" VerticalAlignment="Top" Width="243"/>
-        <PasswordBox PlaceholderText="Confirm password" Password="{Binding ConfirmPasswod}" HorizontalAlignment="Left" Margin="94,315,0,0" VerticalAlignment="Top" Width="243"/>
-        <TextBox PlaceholderText="Phone" HorizontalAlignment="Left" Margin="94,191,0,0" TextWrapping="Wrap" Text="{Binding Path=Phone}" VerticalAlignment="Top" Width="243"/>
-        <Button Content="Sign in" HorizontalAlignment="Left" Margin="94,419,0,0" VerticalAlignment="Top" Height="137" Width="231" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBox PlaceholderText="Login" Grid.Row="1" TextWrapping="Wrap" Text="{Binding Path=Login}" Style="{StaticResource TextBoxStyle}" />
+        <TextBox PlaceholderText="Email" Grid.Row="2" TextWrapping="Wrap" Text="{Binding Path=Email}" Style="{StaticResource TextBoxStyle}"/>
+        <PasswordBox PlaceholderText="Password" Grid.Row="4" Password="{Binding Password}" Style="{StaticResource PasswordStyle}"/>
+        <PasswordBox PlaceholderText="Confirm password" Grid.Row="5" Password="{Binding ConfirmPasswod}" Style="{StaticResource PasswordStyle}"/>
+        <TextBox PlaceholderText="Phone" TextWrapping="Wrap" Grid.Row="3" Text="{Binding Path=Phone}" Style="{StaticResource TextBoxStyle}"/>
+        <Button Content="Sign in" Grid.Row="6" Style="{StaticResource ButtonStyle}" />
+        <TextBlock Grid.Row="0" FontSize="30" FontWeight="Bold" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Добро пожаловать!" />
     </Grid>
 </Page>

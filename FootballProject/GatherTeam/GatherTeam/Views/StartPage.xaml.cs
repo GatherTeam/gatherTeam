@@ -40,5 +40,10 @@ namespace GatherTeam.Views
         {
             Frame.Navigate(typeof (ProfilePage));
         }
+
+        private void RegisterClick(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof (RegisterPage));
+        }
     }
 }
