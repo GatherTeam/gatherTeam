@@ -28,8 +28,8 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button x:Name="RegistrationButton" Click ="EnterClick" Content="Регистрация" Grid.Row="1" Style="{StaticResource ButtonStyle}"/>
-            <Button x:Name="EntranceButton" Click ="RegisterClick" Content="Вход" Grid.Row="0" Style="{StaticResource ButtonStyle}"/>
+            <Button Click ="RegisterClick" Content="Регистрация" Grid.Row="1" Style="{StaticResource ButtonStyle}"/>
+            <Button Click ="EnterClick" Content="Вход" Grid.Row="0" Style="{StaticResource ButtonStyle}"/>
         </Grid>
     </Grid>
 </Page>

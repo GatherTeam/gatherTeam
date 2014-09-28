@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Controls;
+using GatherTeam.Models;
+using GatherTeam.Views;
 
 namespace GatherTeam.ViewModels
 {
@@ -13,6 +16,8 @@ namespace GatherTeam.ViewModels
         private string _password;
         private string _confirmPassword;
         private string _phone;
+        public event OpenPageDelegate OpenProfileEvent;
+        public event OpenPageDelegate OpenRegistrateEvent;
         public string Login
         {
             get { return _login; }
@@ -72,6 +77,44 @@ namespace GatherTeam.ViewModels
                 _phone = value;
                 NotifyPropertyChanged("Phone");
             }
+        }
+
+        private DelegateCommand _createProfile;
+
+        public DelegateCommand CreateProfile
+        {
+            get
+            {
+                if (_createProfile == null)
+                {
+                    _createProfile = new DelegateCommand(o => Registrate());
+                }
+
+                return _createProfile;
+            }
+        }
+
+        // отсюда можно записывать данные о пользователе в БД
+        private void Registrate()
+        {
+            if (CheckData())
+            {
+                var newUser = new UserModel {Email = Email, Login = Login, Password = Password, Phone = Phone};
+                if (OpenProfileEvent != null) OpenProfileEvent();
+            }
+            else
+            {
+                if (OpenRegistrateEvent != null) OpenRegistrateEvent();
+            }
+        }
+
+        private bool CheckData()
+        {
+            return string.IsNullOrWhiteSpace(Login) && 
+                string.IsNullOrWhiteSpace(Email) && 
+                string.IsNullOrWhiteSpace(Password) && 
+                string.IsNullOrWhiteSpace(ConfirmPassword) && 
+                (Password == ConfirmPassword);
         }
     }
 }

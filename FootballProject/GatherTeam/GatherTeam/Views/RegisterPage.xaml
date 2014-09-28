@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="GatherTeam.RegisterPage"
+    x:Class="GatherTeam.Views.RegisterPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:GatherTeam"
@@ -27,15 +27,17 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <TextBox PlaceholderText="Имя пользователя" Grid.Row="0" Text="{Binding Path=Login}" Style="{StaticResource TextBoxStyle}" />
-            <TextBox PlaceholderText="Адрес электронной почты" Grid.Row="1" Text="{Binding Path=Email}" Style="{StaticResource TextBoxStyle}" InputScope="EmailSmtpAddress"/>
-            <TextBox PlaceholderText="Номер телефона" Grid.Row="2" Text="{Binding Path=Phone}" Style="{StaticResource TextBoxStyle}" InputScope="TelephoneNumber"/>
-            <PasswordBox PlaceholderText="Пароль" Grid.Row="3" Password="{Binding Password}" Style="{StaticResource PasswordStyle}"/>
-            <PasswordBox PlaceholderText="Подтвердите пароль" Grid.Row="4" Password="{Binding ConfirmPasswod}" Style="{StaticResource PasswordStyle}"/>
-            <Button Content="Создать профиль" Grid.Row="5" HorizontalAlignment="Right"   VerticalAlignment="Top" FontSize="30" Style="{StaticResource ButtonStyle}" />
+            <TextBox PlaceholderText="Имя пользователя*" Grid.Row="0" Text="{Binding Path=Login, Mode=TwoWay}" Style="{StaticResource TextBoxStyle}" />
+            <TextBox PlaceholderText="Адрес электронной почты*" Grid.Row="1" Text="{Binding Path=Email, Mode=TwoWay}" Style="{StaticResource TextBoxStyle}" InputScope="EmailSmtpAddress"/>
+            <TextBox PlaceholderText="Номер телефона" Grid.Row="2" Text="{Binding Path=Phone, Mode=TwoWay}" Style="{StaticResource TextBoxStyle}" InputScope="TelephoneNumber"/>
+            <PasswordBox PlaceholderText="Пароль*" Grid.Row="3" Password="{Binding Path=Password, Mode=TwoWay}" Style="{StaticResource PasswordStyle}"/>
+            <PasswordBox PlaceholderText="Подтвердите пароль*" Grid.Row="4" Password="{Binding Path=ConfirmPassword, Mode=TwoWay}" Style="{StaticResource PasswordStyle}"/>
+            <Button Command="{Binding CreateProfile}" Content="Создать профиль" Grid.Row="5" HorizontalAlignment="Right"   VerticalAlignment="Top" FontSize="30" Style="{StaticResource ButtonStyle}" />
+            <TextBlock Grid.Row="6" TextWrapping="Wrap" Text="* - обязательно к заполнению" Style="{StaticResource TitleTextBlockStyle}"/>
         </Grid>
     </Grid>
 </Page>

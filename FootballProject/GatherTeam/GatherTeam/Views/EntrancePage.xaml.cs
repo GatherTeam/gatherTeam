@@ -20,9 +20,9 @@ namespace GatherTeam.Views
     /// <summary>
     /// Пустая страница, которую можно использовать саму по себе или для перехода внутри фрейма.
     /// </summary>
-    public sealed partial class BlankPage1 : Page
+    public sealed partial class EntrancePage : Page
     {
-        public BlankPage1()
+        public EntrancePage()
         {
             this.InitializeComponent();
         }

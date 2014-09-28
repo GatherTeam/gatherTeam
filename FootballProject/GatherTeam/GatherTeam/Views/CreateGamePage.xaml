@@ -16,10 +16,9 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Button Grid.Row="4" Content="Создать" Style="{StaticResource ButtonStyle}"/>
         <ComboBox Grid.Row="1" PlaceholderText="Формат игры" ItemsSource="{Binding Path=GameFormats}" Style="{StaticResource ComboBoxStyle}"/>
         <ComboBox Grid.Row="2" PlaceholderText="Адрес" Style="{StaticResource ComboBoxStyle}"/>
         <TimePicker Grid.Row="3" Style="{StaticResource TimePickerStyle}"/>
-
+        <Button Grid.Row="4" Content="Создать" Style="{StaticResource ButtonStyle}"/>
     </Grid>
 </Page>

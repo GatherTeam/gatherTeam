@@ -1,23 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
+﻿// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
+using System;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 using GatherTeam.ViewModels;
 
-namespace GatherTeam
+namespace GatherTeam.Views
 {
+    internal delegate void OpenPageDelegate();
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
@@ -26,8 +15,21 @@ namespace GatherTeam
         public RegisterPage()
         {
             this.InitializeComponent();
-            this.DataContext = new UserViewModel();
+            var userViewModel = new UserViewModel();
+            userViewModel.OpenProfileEvent += OpenProfilePageHandler;
+            userViewModel.OpenRegistrateEvent += OpenRegistrateHandler;
+            this.DataContext = userViewModel;
             this.NavigationCacheMode = NavigationCacheMode.Required;
+        }
+
+        private void OpenProfilePageHandler()
+        {
+            Frame.Navigate(typeof (ProfilePage));
+        }
+
+        private void OpenRegistrateHandler()
+        {
+            Frame.Navigate(typeof (RegisterPage));
         }
 
         /// <summary>
@@ -45,5 +47,8 @@ namespace GatherTeam
             // If you are using the NavigationHelper provided by some templates,
             // this event is handled for you.
         }
+
+        
+
     }
 }
