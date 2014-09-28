@@ -8,22 +8,34 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBox PlaceholderText="Login" Grid.Row="1" TextWrapping="Wrap" Text="{Binding Path=Login}" Style="{StaticResource TextBoxStyle}" />
-        <TextBox PlaceholderText="Email" Grid.Row="2" TextWrapping="Wrap" Text="{Binding Path=Email}" Style="{StaticResource TextBoxStyle}"/>
-        <PasswordBox PlaceholderText="Password" Grid.Row="4" Password="{Binding Password}" Style="{StaticResource PasswordStyle}"/>
-        <PasswordBox PlaceholderText="Confirm password" Grid.Row="5" Password="{Binding ConfirmPasswod}" Style="{StaticResource PasswordStyle}"/>
-        <TextBox PlaceholderText="Phone" TextWrapping="Wrap" Grid.Row="3" Text="{Binding Path=Phone}" Style="{StaticResource TextBoxStyle}"/>
-        <Button Content="Sign in" Grid.Row="6" Style="{StaticResource ButtonStyle}" />
-        <TextBlock Grid.Row="0" FontSize="30" FontWeight="Bold" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Добро пожаловать!" />
+
+        <!--TitlePanel содержит имя приложения и заголовок страницы-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="Gather Team" Style="{StaticResource TitleTextBlockStyle}"/>
+            <TextBlock Text="Регистрация" HorizontalAlignment="Left" Style="{StaticResource HeaderTextBlockStyle}"/>
+        </StackPanel>
+
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBox PlaceholderText="Имя пользователя" Grid.Row="0" Text="{Binding Path=Login}" Style="{StaticResource TextBoxStyle}" />
+            <TextBox PlaceholderText="Адрес электронной почты" Grid.Row="1" Text="{Binding Path=Email}" Style="{StaticResource TextBoxStyle}" InputScope="EmailSmtpAddress"/>
+            <TextBox PlaceholderText="Номер телефона" Grid.Row="2" Text="{Binding Path=Phone}" Style="{StaticResource TextBoxStyle}" InputScope="TelephoneNumber"/>
+            <PasswordBox PlaceholderText="Пароль" Grid.Row="3" Password="{Binding Password}" Style="{StaticResource PasswordStyle}"/>
+            <PasswordBox PlaceholderText="Подтвердите пароль" Grid.Row="4" Password="{Binding ConfirmPasswod}" Style="{StaticResource PasswordStyle}"/>
+            <Button Content="Создать профиль" Grid.Row="5" HorizontalAlignment="Right"   VerticalAlignment="Top" FontSize="30" Style="{StaticResource ButtonStyle}" />
+        </Grid>
     </Grid>
 </Page>

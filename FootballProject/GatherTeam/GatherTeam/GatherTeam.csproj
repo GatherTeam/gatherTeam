@@ -90,6 +90,9 @@
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\CreateGameVM.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
+    <Compile Include="Views\EntrancePage.xaml.cs">
+      <DependentUpon>EntrancePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CreateGamePage.xaml.cs">
       <DependentUpon>CreateGamePage.xaml</DependentUpon>
     </Compile>
@@ -122,6 +125,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\EntrancePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CreateGamePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

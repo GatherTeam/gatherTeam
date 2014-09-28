@@ -5,22 +5,23 @@
     xmlns:local="using:GatherTeam">
     <Application.Resources>
         <Style TargetType="TextBox" x:Key="TextBoxStyle">
-            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+            <Setter Property="TextWrapping" Value="Wrap"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
-            <Setter Property="Width" Value="250"></Setter>
         </Style>
         
         <Style TargetType="PasswordBox" x:Key="PasswordStyle">
-            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
-            <Setter Property="Width" Value="250"></Setter>
         </Style>
         
         <Style TargetType="Button" x:Key="ButtonStyle">
-            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
-            <Setter Property="Width" Value="170"></Setter>
-            <Setter Property="Height" Value="30"></Setter>
+            <Setter Property="FontSize" Value="45"></Setter>
+            <Setter Property="BorderThickness" Value="0"></Setter>
+
+                    
         </Style>
         
         <Style TargetType="ComboBox" x:Key="ComboBoxStyle">
