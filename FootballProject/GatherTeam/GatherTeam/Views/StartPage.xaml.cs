@@ -32,7 +32,7 @@ namespace GatherTeam.Views
 
         private void EnterHandler()
         {
-            Frame.Navigate(typeof (UserPage));
+            Frame.Navigate(typeof (EntrancePage));
         }
 
         private void RegistrateHandler()

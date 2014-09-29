@@ -29,7 +29,7 @@
 
             <TextBox PlaceholderText="Имя пользователя" Grid.Row="0" Text="{Binding Path=LoginInput}" Style="{StaticResource TextBoxStyle}" />
             <PasswordBox PlaceholderText="Пароль" Grid.Row="1" Password="{Binding PasswordInput}" Style="{StaticResource PasswordStyle}"/>
-            <Button Content="Войти" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="30" Style="{StaticResource ButtonStyle}" />
+            <Button Command="{Binding EnterCommand}" Content="Войти" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="30" Style="{StaticResource ButtonStyle}" />
         </Grid>
     </Grid>
 </Page>
