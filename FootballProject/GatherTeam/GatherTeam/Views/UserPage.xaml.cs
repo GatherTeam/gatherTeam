@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // Документацию по шаблону элемента пустой страницы см. по адресу http://go.microsoft.com/fwlink/?LinkID=390556
+using GatherTeam.ViewModels;
 
 namespace GatherTeam.Views
 {
@@ -25,6 +26,10 @@ namespace GatherTeam.Views
         public UserPage()
         {
             this.InitializeComponent();
+            var userProgileViewModel = new UserProgileViewModel();
+            userProgileViewModel.OpenCreateGamePage += OpenProfilePageHandler;
+            userProgileViewModel.OpenCreateTournamentPage += OpenProfilePageHandler;
+            this.DataContext = userProgileViewModel;
         }
 
         /// <summary>
@@ -34,6 +39,11 @@ namespace GatherTeam.Views
         /// Этот параметр обычно используется для настройки страницы.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+        }
+
+        private void OpenProfilePageHandler()
+        {
+            Frame.Navigate(typeof (CreateGamePage));
         }
     }
 }
