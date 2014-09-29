@@ -31,11 +31,10 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <Button Content="Выбрать игру" Style="{StaticResource ButtonStyle}" Grid.Row ="0" ></Button>
-                            <Button Content="Выбрать турнир" Style="{StaticResource ButtonStyle}" Grid.Row ="3" ></Button>
+                            <Button Content="Выбрать игру" Style="{StaticResource ButtonStyle}" Grid.Row ="0" FontSize="40" ></Button>
+                            <Button Content="Выбрать турнир" Style="{StaticResource ButtonStyle}" Grid.Row ="1" FontSize="40"></Button>
                         </Grid>
                     </PivotItem>
                     <PivotItem x:Name="Create" Header="Создание" Style="{StaticResource PivotTitleContentControlStyle}">
@@ -43,10 +42,12 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
+                            <Button Content="Создать игру" Style="{StaticResource ButtonStyle}" Grid.Row ="0" FontSize="40" ></Button>
+                            <Button Content="Создать турнир" Style="{StaticResource ButtonStyle}" Grid.Row ="1" FontSize="40" ></Button>
                         </Grid>
+                        
                     </PivotItem>
                     <PivotItem x:Name="UserGames" Header="Мои игры" Style="{StaticResource PivotTitleContentControlStyle}">
                         <Grid>
