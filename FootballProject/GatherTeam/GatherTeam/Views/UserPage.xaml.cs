@@ -26,7 +26,7 @@ namespace GatherTeam.Views
         public UserPage()
         {
             this.InitializeComponent();
-            var userProgileViewModel = new UserProgileViewModel();
+            var userProgileViewModel = new UserViewModel();
             userProgileViewModel.OpenCreateGamePage += OpenProfilePageHandler;
             userProgileViewModel.OpenCreateTournamentPage += OpenProfilePageHandler;
             this.DataContext = userProgileViewModel;

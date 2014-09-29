@@ -15,16 +15,16 @@ namespace GatherTeam.Views
         public RegisterPage()
         {
             this.InitializeComponent();
-            var userViewModel = new UserViewModel();
-            userViewModel.OpenProfileEvent += OpenProfilePageHandler;
-            userViewModel.OpenRegistrateEvent += OpenRegistrateHandler;
-            this.DataContext = userViewModel;
+            var registerViewModel = new RegisterViewModel();
+            registerViewModel.OpenProfileEvent += OpenProfilePageHandler;
+            registerViewModel.OpenRegistrateEvent += OpenRegistrateHandler;
+            this.DataContext = registerViewModel;
             this.NavigationCacheMode = NavigationCacheMode.Required;
         }
 
         private void OpenProfilePageHandler()
         {
-            Frame.Navigate(typeof (ProfilePage));
+            Frame.Navigate(typeof (UserPage));
         }
 
         private void OpenRegistrateHandler()

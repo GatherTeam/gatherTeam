@@ -1,114 +1,48 @@
-﻿using GatherTeam.Models;
-using GatherTeam.Views;
+﻿using GatherTeam.Views;
 
 namespace GatherTeam.ViewModels
 {
     class UserViewModel : BaseViewModel
     {
-        private string _login;
-        private string _email;
-        private string _password;
-        private string _confirmPassword;
-        private string _phone;
-        public event OpenPageDelegate OpenProfileEvent;
-        public event OpenPageDelegate OpenRegistrateEvent;
-        public string Login
-        {
-            get { return _login; }
-            set
-            {
-                _login = value;
-                NotifyPropertyChanged("Login");
-            } 
-        }
+        public event OpenPageDelegate OpenCreateGamePage;
+        public event OpenPageDelegate OpenCreateTournamentPage;
+        private DelegateCommand _createGame;
+        private DelegateCommand _createTournament;
 
-        public string Email
+        public DelegateCommand CreateGameCommand
         {
             get
             {
-                return _email;
-            }
-            set
-            {
-                _email = value;
-                NotifyPropertyChanged("Email");
-            }
-        }
-
-        public string Password
-        {
-            get
-            {
-                return _password;
-            }
-            set
-            {
-                _password = value;
-                NotifyPropertyChanged("Password");
-            }
-        }
-        public string ConfirmPassword
-        {
-            get
-            {
-                return _confirmPassword;
-            }
-            set
-            {
-                _confirmPassword = value;
-                NotifyPropertyChanged("ConfirmPassword");
-            }
-        }
-
-        public string Phone
-        {
-            get
-            {
-                return _phone;
-            }
-            set
-            {
-                _phone = value;
-                NotifyPropertyChanged("Phone");
-            }
-        }
-
-        private DelegateCommand _createProfile;
-
-        public DelegateCommand CreateProfile
-        {
-            get
-            {
-                if (_createProfile == null)
+                if (_createGame == null)
                 {
-                    _createProfile = new DelegateCommand(o => Registrate());
+                    _createGame = new DelegateCommand(o => CreateGame());
                 }
 
-                return _createProfile;
+                return _createGame;
             }
         }
 
-        // отсюда можно записывать данные о пользователе в БД
-        private void Registrate()
+        public DelegateCommand CreateTournamentCommand
         {
-            if (CheckData())
+            get
             {
-                var newUser = new UserModel {Email = Email, Login = Login, Password = Password, Phone = Phone};
-                if (OpenProfileEvent != null) OpenProfileEvent();
-            }
-            else
-            {
-                if (OpenRegistrateEvent != null) OpenRegistrateEvent();
+                if (_createTournament == null)
+                {
+                    _createTournament = new DelegateCommand(o => CreateTournament());
+                }
+
+                return _createTournament;
             }
         }
 
-        private bool CheckData()
+        private void CreateGame()
         {
-            return string.IsNullOrWhiteSpace(Login) && 
-                string.IsNullOrWhiteSpace(Email) && 
-                string.IsNullOrWhiteSpace(Password) && 
-                string.IsNullOrWhiteSpace(ConfirmPassword) && 
-                (Password == ConfirmPassword);
+            if (OpenCreateGamePage != null) OpenCreateGamePage();
+        }
+
+        private void CreateTournament()
+        {
+            if (OpenCreateTournamentPage != null) OpenCreateTournamentPage();
         }
     }
 }

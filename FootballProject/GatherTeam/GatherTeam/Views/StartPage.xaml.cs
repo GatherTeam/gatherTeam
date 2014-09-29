@@ -1,19 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
+﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
+using GatherTeam.ViewModels;
 
 namespace GatherTeam.Views
 {
@@ -25,6 +15,10 @@ namespace GatherTeam.Views
         public StartPage()
         {
             this.InitializeComponent();
+            var startViewModel = new StartViewModel();
+            startViewModel.EnterEvent += EnterHandler;
+            startViewModel.RegistrateEvent += RegistrateHandler;
+            this.DataContext = startViewModel;
         }
 
         /// <summary>
@@ -36,12 +30,12 @@ namespace GatherTeam.Views
         {
         }
 
-        private void EnterClick(object sender, RoutedEventArgs e)
+        private void EnterHandler()
         {
             Frame.Navigate(typeof (UserPage));
         }
 
-        private void RegisterClick(object sender, RoutedEventArgs e)
+        private void RegistrateHandler()
         {
             Frame.Navigate(typeof (RegisterPage));
         }
