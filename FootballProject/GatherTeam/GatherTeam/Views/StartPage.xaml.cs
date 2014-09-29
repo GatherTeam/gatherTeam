@@ -38,7 +38,7 @@ namespace GatherTeam.Views
 
         private void EnterClick(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof (ProfilePage));
+            Frame.Navigate(typeof (UserPage));
         }
 
         private void RegisterClick(object sender, RoutedEventArgs e)
