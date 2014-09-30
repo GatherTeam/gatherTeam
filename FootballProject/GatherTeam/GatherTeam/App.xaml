@@ -19,21 +19,17 @@
             <Setter Property="HorizontalAlignment" Value="Left"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
             <Setter Property="FontSize" Value="45"></Setter>
-            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="BorderThickness" Value="0"></Setter>                
+        </Style>
 
-                    
-        </Style>
-        
         <Style TargetType="ComboBox" x:Key="ComboBoxStyle">
-            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
-            <Setter Property="Width" Value="250"></Setter>
         </Style>
-        
+
         <Style TargetType="TimePicker" x:Key="TimePickerStyle">
-            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
-            <Setter Property="Width" Value="250"></Setter>
         </Style>
     </Application.Resources>
 </Application>
