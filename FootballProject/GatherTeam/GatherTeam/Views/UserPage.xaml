@@ -33,8 +33,8 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <Button Command="{Binding CreateGameCommand}" Content="Выбрать игру" Style="{StaticResource ButtonStyle}" Grid.Row ="0" FontSize="40" ></Button>
-                            <Button Command="{Binding CreateTournamentCommand}" Content="Выбрать турнир" Style="{StaticResource ButtonStyle}" Grid.Row ="1" FontSize="40"></Button>
+                            <Button Content="Выбрать игру" Style="{StaticResource ButtonStyle}" Grid.Row ="0" FontSize="40" ></Button>
+                            <Button Content="Выбрать турнир" Style="{StaticResource ButtonStyle}" Grid.Row ="1" FontSize="40"></Button>
                         </Grid>
                     </PivotItem>
                     <PivotItem x:Name="Create" Header="Создание" Style="{StaticResource PivotTitleContentControlStyle}">
@@ -44,8 +44,8 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <Button Content="Создать игру" Style="{StaticResource ButtonStyle}" Grid.Row ="0" FontSize="40" ></Button>
-                            <Button Content="Создать турнир" Style="{StaticResource ButtonStyle}" Grid.Row ="1" FontSize="40" ></Button>
+                            <Button Command="{Binding CreateGameCommand}" Content="Создать игру" Style="{StaticResource ButtonStyle}" Grid.Row ="0" FontSize="40" ></Button>
+                            <Button Command="{Binding CreateTournamentCommand}" Content="Создать турнир" Style="{StaticResource ButtonStyle}" Grid.Row ="1" FontSize="40" ></Button>
                         </Grid>
                         
                     </PivotItem>
