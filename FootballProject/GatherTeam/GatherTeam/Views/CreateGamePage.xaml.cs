@@ -12,6 +12,9 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
+using Microsoft.WindowsAzure.MobileServices.Sync;
+using Newtonsoft.Json.Linq;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 using GatherTeam.ViewModels;
@@ -27,8 +30,14 @@ namespace GatherTeam.Views
         {
             this.InitializeComponent();
             DataContext = new CreateGameVM();
+            GatherTeam.DataBase.LocalDB.InitSQLiteStore();
         }
 
+        private void CreateHandler()
+        {
+            GatherTeam.DataBase.LocalDB.InsertItem(new GatherTeam.Models.GameModel {Format = Models.GameModel.GameFormat.FiveToFive});
+            GatherTeam.DataBase.LocalDB.Push();
+        }
         /// <summary>
         /// Invoked when this page is about to be displayed in a Frame.
         /// </summary>

@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Newtonsoft.Json;
 namespace GatherTeam.Models
 {
+    
     public class GameModel
     {
         public enum GameFormat
@@ -15,8 +16,11 @@ namespace GatherTeam.Models
             Other
         }
 
-        public GameFormat Format;
-        public string Time;
-        public string Address;
+        [JsonProperty(PropertyName = "format")]
+        public GameFormat Format {get; set;}
+        [JsonProperty(PropertyName = "Time")]
+        public string Time {get; set;}
+        [JsonProperty(PropertyName = "Address")]
+        public string Address {get; set;}
     }
 }

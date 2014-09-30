@@ -31,7 +31,7 @@
             <ComboBox Grid.Row="0" PlaceholderText="Формат игры"  Style="{StaticResource ComboBoxStyle}" ItemsSource="{Binding Path=GameFormats}"></ComboBox>
             <ComboBox Grid.Row="1" PlaceholderText="Адрес" Style="{StaticResource ComboBoxStyle}"/>
             <TimePicker Grid.Row="2" Style="{StaticResource TimePickerStyle}"/>
-            <Button Content="Создать" Grid.Row="3" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Right"   VerticalAlignment="Top" FontSize="30"  />
+            <Button Command="{Binding CreateCommand}" Content="Создать" Grid.Row="3" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Right"   VerticalAlignment="Top" FontSize="30"  />
         </Grid>
     </Grid>
 </Page>

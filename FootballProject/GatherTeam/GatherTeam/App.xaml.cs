@@ -27,6 +27,11 @@ namespace GatherTeam
     /// </summary>
     public sealed partial class App : Application
     {
+        // http://go.microsoft.com/fwlink/?LinkId=290986&clcid=0x419
+        public static Microsoft.WindowsAzure.MobileServices.MobileServiceClient GatherTeamBackendClient = new Microsoft.WindowsAzure.MobileServices.MobileServiceClient(
+        "https://gatherteambackend.azure-mobile.net/",
+        "CSfFPBQRIvZJFXEhNeQpXjzcLgUWaZ65");
+
         private TransitionCollection transitions;
 
         /// <summary>
