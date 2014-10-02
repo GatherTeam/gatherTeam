@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
+using Windows.Storage;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 using GatherTeam.Views;
@@ -32,6 +33,7 @@ namespace GatherTeam
         "https://gatherteambackend.azure-mobile.net/",
         "CSfFPBQRIvZJFXEhNeQpXjzcLgUWaZ65");
 
+        public static string DB_Path = Path.Combine(Path.Combine(ApplicationData.Current.LocalFolder.Path, "UserGames.sqlite"));
         private TransitionCollection transitions;
 
         /// <summary>
