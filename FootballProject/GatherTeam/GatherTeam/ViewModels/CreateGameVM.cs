@@ -28,8 +28,8 @@ namespace GatherTeam.ViewModels
         private void Create()
         {
             if (CreateEvent != null) CreateEvent();
-            DataBase.LocalDB.InsertItem(new Models.GameModel { Format = Models.GameModel.GameFormat.FiveToFive });
-            DataBase.LocalDB.Push();
+//            DataBase.LocalDB.InsertItem(new Models.GameModel { Format = Models.GameModel.GameFormat.FiveToFive });
+//            DataBase.LocalDB.Push();
         }
     }
 }

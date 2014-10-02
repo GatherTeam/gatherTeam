@@ -32,7 +32,7 @@ namespace GatherTeam.Views
             var createGameVm = new CreateGameVM();
             createGameVm.CreateEvent += CreateGameHandler;
             this.DataContext = createGameVm;
-            GatherTeam.DataBase.LocalDB.InitSQLiteStore();
+//            GatherTeam.DataBase.LocalDB.InitSQLiteStore();
         }
 
         /// <summary>

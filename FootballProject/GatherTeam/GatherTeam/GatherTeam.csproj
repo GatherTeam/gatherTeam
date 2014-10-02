@@ -90,6 +90,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataBase\LocalDB.cs" />
+    <Compile Include="Models\GameAddress.cs" />
     <Compile Include="Models\GameModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="SQLite.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="ViewModels\CreateGameVM.cs" />
     <Compile Include="ViewModels\DelegateCommand.cs" />
     <Compile Include="ViewModels\EntranceViewModel.cs" />
+    <Compile Include="ViewModels\MapViewModel.cs" />
     <Compile Include="ViewModels\StartViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
@@ -198,6 +200,10 @@
     </Reference>
     <Reference Include="SQLitePCL">
       <HintPath>..\packages\SQLitePCL.3.8.5.1\lib\wpa81\SQLitePCL.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCL.Ext, Version=3.8.5.0, Culture=neutral, PublicKeyToken=bddade01e9c850c5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SQLitePCL.3.8.5.1\build\wpa81\SQLitePCL.Ext.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.Extensions">
       <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\wpa81\System.Net.Http.Extensions.dll</HintPath>
