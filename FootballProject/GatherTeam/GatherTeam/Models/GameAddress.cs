@@ -4,7 +4,7 @@ namespace GatherTeam.Models
 {
     public class GameAddress
     {
-        public Geoposition Geoposition { get; set; }
+        public Geopoint Geoposition { get; set; }
         public string Address { get; set; }
     }
 }

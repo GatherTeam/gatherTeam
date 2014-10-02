@@ -11,7 +11,8 @@
 
     <Grid>
 
-        <Maps:MapControl MapHolding="MapHoldingHandler" Center="{Binding Path=CenterCoords}" ZoomLevel="{Binding Path=ZoomLevel}"/>
+        <Maps:MapControl MapHolding="MapHoldingHandler" Center="{Binding Path=CenterCoords}" ZoomLevel="{Binding Path=ZoomLevel}"> 
+        </Maps:MapControl>
 
     </Grid>
 </Page>
