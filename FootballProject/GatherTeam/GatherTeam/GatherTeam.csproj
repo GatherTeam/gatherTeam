@@ -90,6 +90,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataBase\LocalDB.cs" />
+    <Compile Include="Models\GameAddress.cs" />
     <Compile Include="Models\GameModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="SQLite.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="ViewModels\CreateGameVM.cs" />
     <Compile Include="ViewModels\DelegateCommand.cs" />
     <Compile Include="ViewModels\EntranceViewModel.cs" />
+    <Compile Include="ViewModels\MapViewModel.cs" />
     <Compile Include="ViewModels\StartViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
