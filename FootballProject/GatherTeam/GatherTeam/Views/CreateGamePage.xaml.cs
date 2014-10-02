@@ -29,15 +29,12 @@ namespace GatherTeam.Views
         public CreateGamePage()
         {
             this.InitializeComponent();
-            DataContext = new CreateGameVM();
+            var createGameVm = new CreateGameVM();
+            createGameVm.CreateEvent += CreateGameHandler;
+            this.DataContext = createGameVm;
             GatherTeam.DataBase.LocalDB.InitSQLiteStore();
         }
 
-        private void CreateHandler()
-        {
-            GatherTeam.DataBase.LocalDB.InsertItem(new GatherTeam.Models.GameModel {Format = Models.GameModel.GameFormat.FiveToFive});
-            GatherTeam.DataBase.LocalDB.Push();
-        }
         /// <summary>
         /// Invoked when this page is about to be displayed in a Frame.
         /// </summary>
@@ -45,6 +42,11 @@ namespace GatherTeam.Views
         /// This parameter is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+        }
+
+        private void CreateGameHandler()
+        {
+            Frame.Navigate(typeof (MapPage));
         }
     }
 }

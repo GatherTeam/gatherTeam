@@ -5,8 +5,10 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Maps;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
@@ -20,9 +22,9 @@ namespace GatherTeam.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class GoogleMapPage : Page
+    public sealed partial class MapPage : Page
     {
-        public GoogleMapPage()
+        public MapPage()
         {
             this.InitializeComponent();
         }
@@ -34,6 +36,13 @@ namespace GatherTeam.Views
         /// This parameter is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+        }
+
+        private void MapHoldingHandler(MapControl sender, MapInputEventArgs args)
+        {
+            var coords = args.Location.Position;
+            var message = new MessageDialog("X=" + coords.Latitude + "\nY=" + coords.Longitude);
+            message.ShowAsync();
         }
     }
 }

@@ -6,7 +6,7 @@ using GatherTeam.ViewModels;
 
 namespace GatherTeam.Views
 {
-    internal delegate void OpenPageDelegate();
+    public delegate void OpenPageDelegate();
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>

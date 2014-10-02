@@ -107,8 +107,8 @@
     <Compile Include="Views\CreateGamePage.xaml.cs">
       <DependentUpon>CreateGamePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\GoogleMapPage.xaml.cs">
-      <DependentUpon>GoogleMapPage.xaml</DependentUpon>
+    <Compile Include="Views\MapPage.xaml.cs">
+      <DependentUpon>MapPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
@@ -149,7 +149,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\GoogleMapPage.xaml">
+    <Page Include="Views\MapPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -169,9 +169,6 @@
   <ItemGroup>
     <SDKReference Include="Microsoft.VCLibs, version=12.0">
       <Name>Microsoft Visual C++ 2013 Runtime Package for Windows Phone</Name>
-    </SDKReference>
-    <SDKReference Include="SQLite.WP81, Version=3.8.6">
-      <Name>SQLite for Windows Phone 8.1 %28SQLite.WP81, Version=3.8.6%29</Name>
     </SDKReference>
   </ItemGroup>
   <ItemGroup>
