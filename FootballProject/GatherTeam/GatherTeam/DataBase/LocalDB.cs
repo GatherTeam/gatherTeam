@@ -7,6 +7,7 @@ using System.Threading;
 using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
 using Microsoft.WindowsAzure.MobileServices.Sync;
 using Newtonsoft.Json;
+using Microsoft.WindowsAzure.MobileServices;    
 
 
 namespace GatherTeam.DataBase
@@ -15,27 +16,20 @@ namespace GatherTeam.DataBase
     {
         public static async void InitSQLiteStore()
         {
-
-            if (!App.GatherTeamBackendClient.SyncContext.IsInitialized)
-            {
-
-                var store = new MobileServiceSQLiteStore("GameUserSync.db");
-
-                store.DefineTable<Models.GameModel>();
-
-                await App.GatherTeamBackendClient.SyncContext.InitializeAsync(store, new MobileServiceSyncHandler());
-
-            }
-
+            
+              if (!App.GatherTeamBackendClient.SyncContext.IsInitialized)
+              {
+                    var store = new MobileServiceSQLiteStore("UserGames.db");
+                    store.DefineTable<GatherTeam.Models.GameModel>();
+                    await App.GatherTeamBackendClient.SyncContext.InitializeAsync(store, new MobileServiceSyncHandler());
+                }
         }
+        
 
         public static async void InsertItem(Models.GameModel item)
         {
-
             IMobileServiceSyncTable<Models.GameModel> table = App.GatherTeamBackendClient.GetSyncTable<Models.GameModel>();
-
             await table.InsertAsync(item);
-
         }
         
         public static async void Push() {

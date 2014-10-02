@@ -5,12 +5,16 @@ namespace GatherTeam.ViewModels
 {
     public class CreateGameVM : BaseViewModel
     {
+
+        public event OpenPageDelegate CreateEvent;
+        private DelegateCommand _createCommand;
+
+
         private readonly ObservableCollection<string> _gameFormats = new ObservableCollection<string>{"5x5", "6x6", "другой"};
 
         public ObservableCollection<string> GameFormats { get { return _gameFormats; } }
 
-        public event OpenPageDelegate CreateEvent;
-        private DelegateCommand _createCommand;
+       
 
         public DelegateCommand CreateCommand
         {
@@ -28,8 +32,8 @@ namespace GatherTeam.ViewModels
         private void Create()
         {
             if (CreateEvent != null) CreateEvent();
-//            DataBase.LocalDB.InsertItem(new Models.GameModel { Format = Models.GameModel.GameFormat.FiveToFive });
-//            DataBase.LocalDB.Push();
+            DataBase.LocalDB.InsertItem(new Models.GameModel { Format = Models.GameModel.GameFormat.FiveToFive });
+            //DataBase.LocalDB.Push();
         }
     }
 }

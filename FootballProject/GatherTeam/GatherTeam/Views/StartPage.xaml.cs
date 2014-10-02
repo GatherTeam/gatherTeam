@@ -22,6 +22,8 @@ namespace GatherTeam.Views
             startViewModel.EnterEvent += EnterHandler;
             startViewModel.RegistrateEvent += RegistrateHandler;
             this.DataContext = startViewModel;
+            
+            GatherTeam.DataBase.LocalDB.InitSQLiteStore();
         }
 
         /// <summary>
