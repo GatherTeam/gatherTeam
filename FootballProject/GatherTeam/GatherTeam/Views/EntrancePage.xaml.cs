@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // Документацию по шаблону элемента пустой страницы см. по адресу http://go.microsoft.com/fwlink/?LinkID=390556
+using GatherTeam.DataBase;
 using GatherTeam.ViewModels;
 
 namespace GatherTeam.Views
@@ -28,6 +29,7 @@ namespace GatherTeam.Views
             this.InitializeComponent();
             var entranceViewModel = new EntranceViewModel();
             entranceViewModel.EnterEvent += EnterHandler;
+            LocalDB.Push();
             this.DataContext = entranceViewModel;
         }
 
