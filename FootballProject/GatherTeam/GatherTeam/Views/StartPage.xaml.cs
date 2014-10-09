@@ -25,8 +25,9 @@ namespace GatherTeam.Views
             startViewModel.RegistrateEvent += RegistrateHandler;
             this.DataContext = startViewModel;
             
-            LocalDB.InitSQLiteStore();
-            LocalDB.InsertItem(new GameModel
+           // LocalDB.InitSQLiteStore();
+
+            /*LocalDB.InsertItem(new GameModel
             {
                 Format = GameModel.GameFormat.FiveToFive, 
                 GameAddress = new GameAddress(), 
@@ -34,7 +35,7 @@ namespace GatherTeam.Views
                 Id = "1", 
                 Time = "", 
                 Version = ""
-            });
+            });*/
         }
 
         /// <summary>

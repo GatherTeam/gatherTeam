@@ -5,8 +5,10 @@ namespace GatherTeam.ViewModels
     class UserViewModel : BaseViewModel
     {
         public event OpenPageDelegate OpenCreateGamePage;
+        public event OpenPageDelegate OpenSettingsPage;
         public event OpenPageDelegate OpenCreateTournamentPage;
         private DelegateCommand _createGame;
+        private DelegateCommand _openSettings;
         private DelegateCommand _createTournament;
 
         public DelegateCommand CreateGameCommand
@@ -19,6 +21,19 @@ namespace GatherTeam.ViewModels
                 }
 
                 return _createGame;
+            }
+        }
+
+        public DelegateCommand SettingsCommand
+        {
+            get
+            {
+                if (_openSettings == null)
+                {
+                    _openSettings = new DelegateCommand(o => OpenSettings());
+                }
+
+                return _openSettings;
             }
         }
 
@@ -38,6 +53,11 @@ namespace GatherTeam.ViewModels
         private void CreateGame()
         {
             if (OpenCreateGamePage != null) OpenCreateGamePage();
+        }
+
+        private void OpenSettings()
+        {
+            if (OpenSettingsPage != null) OpenSettingsPage();
         }
 
         private void CreateTournament()

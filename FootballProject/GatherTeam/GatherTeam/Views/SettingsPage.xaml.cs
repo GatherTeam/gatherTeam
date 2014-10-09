@@ -14,23 +14,17 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // Документацию по шаблону элемента пустой страницы см. по адресу http://go.microsoft.com/fwlink/?LinkID=390556
-using GatherTeam.ViewModels;
 
 namespace GatherTeam.Views
 {
     /// <summary>
     /// Пустая страница, которую можно использовать саму по себе или для перехода внутри фрейма.
     /// </summary>
-    public sealed partial class UserPage : Page
+    public sealed partial class SettingsPage : Page
     {
-        public UserPage()
+        public SettingsPage()
         {
             this.InitializeComponent();
-            var userProgileViewModel = new UserViewModel();
-            userProgileViewModel.OpenCreateGamePage += OpenProfilePageHandler;
-            userProgileViewModel.OpenCreateTournamentPage += OpenProfilePageHandler;
-            userProgileViewModel.OpenSettingsPage += OpenSettingsPageHandler;
-            this.DataContext = userProgileViewModel;          
         }
 
         /// <summary>
@@ -42,14 +36,5 @@ namespace GatherTeam.Views
         {
         }
 
-        private void OpenProfilePageHandler()
-        {
-            Frame.Navigate(typeof (CreateGamePage));
-        }
-
-        private void OpenSettingsPageHandler()
-        {
-            Frame.Navigate(typeof (SettingsPage));
-        }
     }
 }

@@ -9,6 +9,14 @@
     
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    <Page.BottomAppBar>
+        <CommandBar x:Name="appBar">            
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Command="{Binding SettingsCommand}" Icon="Setting" Label="Настройки"/>             
+            </CommandBar.PrimaryCommands>
+        </CommandBar>            
+    </Page.BottomAppBar>
 
     <Grid>
         <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -21,7 +29,7 @@
             <StackPanel Grid.Row="0" Margin="12,17,0,28">
                 <TextBlock Text="Gather Team" Style="{StaticResource TitleTextBlockStyle}"/>
             </StackPanel>
-
+            
 
             <!--ContentPanel – поместите здесь дополнительное содержимое-->
             <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
@@ -51,7 +59,7 @@
                     </PivotItem>
                     <PivotItem x:Name="UserGames" Header="Мои игры" Style="{StaticResource PivotTitleContentControlStyle}">
                         <Grid>
-
+                                
                         </Grid>
                     </PivotItem>
                     <PivotItem x:Name="UserProfile" Header="Мой профиль" Style="{ThemeResource PivotTitleContentControlStyle}">
