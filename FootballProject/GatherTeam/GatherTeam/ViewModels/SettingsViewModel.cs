@@ -8,22 +8,6 @@ namespace GatherTeam.ViewModels
 {
     class SettingsViewModel : BaseViewModel
     {
-        public DelegateCommand SettingsCommand
-        {
-            get
-            {
-                if (_createCommand == null)
-                {
-                    _createCommand = new DelegateCommand(o => Create());
-                }
 
-                return _createCommand;
-            }
-        }
-
-        private void Create()
-        {
-            if (CreateEvent != null) CreateEvent();
-        }
     }
 }
