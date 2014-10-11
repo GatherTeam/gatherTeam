@@ -1,0 +1,2 @@
+D:\footballapp\GatherTeamBackend_\GatherTeamBackendService\obj\Release\GatherTeamBackendService.csprojFakesResolveAssemblyReference.cache
+D:\footballapp\GatherTeamBackend_\GatherTeamBackendService\obj\Release\GatherTeamBackendService.csproj.App.config
