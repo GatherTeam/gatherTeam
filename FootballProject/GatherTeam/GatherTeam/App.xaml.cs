@@ -20,6 +20,7 @@ using Windows.Storage;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 using GatherTeam.Views;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace GatherTeam
 {
@@ -29,11 +30,14 @@ namespace GatherTeam
     public sealed partial class App : Application
     {
         // http://go.microsoft.com/fwlink/?LinkId=290986&clcid=0x419
-        public static Microsoft.WindowsAzure.MobileServices.MobileServiceClient GatherTeamBackendClient = new Microsoft.WindowsAzure.MobileServices.MobileServiceClient(
-        "https://gatherteambackend.azure-mobile.net/",
-        "CSfFPBQRIvZJFXEhNeQpXjzcLgUWaZ65");
+//        public static MobileServiceClient MobileService =
+//            new MobileServiceClient("http://localhost:50523"); 
+        // Use this constructor instead after publishing to the cloud 
+         public static MobileServiceClient MobileService = new MobileServiceClient( 
+         "https://gatherteamproject.azure-mobile.net/", "rAMMhRSCLzQIzaKPdZATfGZdtayKbp10");
 
-        public static string DB_Path = Path.Combine(Path.Combine(ApplicationData.Current.LocalFolder.Path, "UserGames.sqlite"));
+        public static string DB_Path = 
+            Path.Combine(Path.Combine(ApplicationData.Current.LocalFolder.Path, "UserGames.sqlite"));
         private TransitionCollection transitions;
 
         /// <summary>
