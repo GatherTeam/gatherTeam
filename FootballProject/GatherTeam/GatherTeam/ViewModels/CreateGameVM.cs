@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using GatherTeam.Models;
 using GatherTeam.Views;
 
 namespace GatherTeam.ViewModels
@@ -32,8 +33,16 @@ namespace GatherTeam.ViewModels
         private void Create()
         {
             if (CreateEvent != null) CreateEvent();
-            DataBase.LocalDB.InsertItem(new Models.GameModel { Format = Models.GameModel.GameFormat.FiveToFive });
-            //DataBase.LocalDB.Push();
+            DataBase.LocalDB.InsertItem(new Models.GameModel 
+            {
+                Id = "ololo",
+                Format = GameModel.GameFormat.SixToSix ,
+                GameAddress = new GameAddress(),
+                GameName = "thisis sparta!!!11!!",
+                Time = "11:22",
+                Version = "first"
+            });
+            DataBase.LocalDB.Push();
         }
     }
 }

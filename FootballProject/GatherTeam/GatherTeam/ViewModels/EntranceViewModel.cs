@@ -1,4 +1,5 @@
-﻿using GatherTeam.Views;
+﻿using GatherTeam.DataBase;
+using GatherTeam.Views;
 
 namespace GatherTeam.ViewModels
 {
@@ -23,6 +24,7 @@ namespace GatherTeam.ViewModels
         private void Enter()
         {
             if (EnterEvent != null) EnterEvent();
+            LocalDB.InitSQLiteStore();
         }
     }
 }

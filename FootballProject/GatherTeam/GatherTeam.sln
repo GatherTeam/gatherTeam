@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatherTeam", "GatherTeam\GatherTeam.csproj", "{98761A33-9887-4A64-AA3C-95BD9C35EDDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatherTeamBackendService", "..\..\GatherTeamBackend_\GatherTeamBackendService\GatherTeamBackendService.csproj", "{209FA716-A7AD-4095-BD70-C8710FC66FA7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatherTeamBackendService", "..\..\GatherTeamBackend\GatherTeamBackendService\GatherTeamBackendService.csproj", "{209FA716-A7AD-4095-BD70-C8710FC66FA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

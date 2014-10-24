@@ -29,7 +29,7 @@ namespace GatherTeam.Views
             this.InitializeComponent();
             var entranceViewModel = new EntranceViewModel();
             entranceViewModel.EnterEvent += EnterHandler;
-            LocalDB.Push();
+//            LocalDB.Push();
             this.DataContext = entranceViewModel;
         }
 

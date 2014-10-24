@@ -27,10 +27,25 @@ namespace GatherTeam.DataBase
         }
         
 
-        public static async void InsertItem(Models.GameModel item)
+        public static async void InsertItem(GameModel item)
         {
-            IMobileServiceSyncTable<Models.GameModel> table = App.GatherTeamBackendClient.GetSyncTable<Models.GameModel>();
+            IMobileServiceSyncTable<GameModel> table = 
+                App.GatherTeamBackendClient.GetSyncTable<GameModel>();
             await table.InsertAsync(item);
+        }
+
+        public static async void DeleteItem(GameModel item)
+        {
+            IMobileServiceSyncTable<GameModel> table = 
+                App.GatherTeamBackendClient.GetSyncTable<GameModel>();
+            await table.DeleteAsync(item);
+        }
+
+        public static async Task<IEnumerable<GameModel>> ShowItems()
+        {
+            IMobileServiceSyncTable<GameModel> table =
+                App.GatherTeamBackendClient.GetSyncTable<GameModel>();
+            return await table.ReadAsync();
         }
 
         public static async void Push() {
