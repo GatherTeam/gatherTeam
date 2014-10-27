@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="gatherteamproject.Views.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:gatherteamproject"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="Gather Team" Style="{StaticResource TitleTextBlockStyle}"/>
+            <TextBlock Text="Настройки" HorizontalAlignment="Left" Style="{StaticResource HeaderTextBlockStyle}" FontSize ="43"/>
+        </StackPanel>
+
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <ComboBox Grid.Row="0" PlaceholderText="Выберите тему приложения"  Style="{StaticResource ComboBoxStyle}"></ComboBox>
+            <Button Content="Сохранить" Grid.Row="1" HorizontalAlignment="Right"   VerticalAlignment="Top" FontSize="30" Style="{StaticResource ButtonStyle}" />
+        </Grid>
+    </Grid>
+</Page>
+

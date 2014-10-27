@@ -12,8 +12,31 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CreateGamePage.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataModel\DataGroup.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataModel\FakeSourceData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataModel\GameAddress.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataModel\GameModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataModel\TimeGroup.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataModel\TodoItem.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)MainPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataModel\UserModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EntrancePage.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MapPage.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RegisterPage.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SelectGamePage.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SettigsPage.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StartPage.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserPage.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CreateGameVMcs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DelegateCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\EntranceViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MapViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\RegisterViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SettingsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\StartViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">

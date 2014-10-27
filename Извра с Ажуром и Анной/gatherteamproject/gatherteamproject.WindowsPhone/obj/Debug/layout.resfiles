@@ -7,3 +7,11 @@ Assets\WideLogo.scale-240.png
 App.xbf
 gatherteamproject.WindowsPhone.xr.xml
 MainPage.xbf
+Views\CreateGamePage.xbf
+Views\EntrancePage.xbf
+Views\MapPage.xbf
+Views\RegisterPage.xbf
+Views\SelectGamePage.xbf
+Views\SettingsPage.xbf
+Views\StartPage.xbf
+Views\UserPage.xbf
