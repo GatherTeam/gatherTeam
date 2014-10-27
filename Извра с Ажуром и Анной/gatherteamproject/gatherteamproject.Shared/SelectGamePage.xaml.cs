@@ -15,12 +15,12 @@ using Windows.UI.Xaml.Navigation;
 
 // Документацию по шаблону элемента пустой страницы см. по адресу http://go.microsoft.com/fwlink/?LinkID=390556
 
-namespace gatherteamproject.Views
+namespace gatherteamproject
 {
     /// <summary>
     /// Пустая страница, которую можно использовать саму по себе или для перехода внутри фрейма.
     /// </summary>
-    public sealed partial class SelectGamePage : Page
+    sealed partial class SelectGamePage : Page
     {
         public SelectGamePage()
         {

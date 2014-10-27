@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using Windows.Devices.Geolocation;
 using Windows.UI.Popups;
-using Windows.UI.Xaml.Controls.Maps;
+//using Windows.UI.Xaml.Controls.Maps;
 using gatherteamproject;
 
 namespace gatherteamproject.ViewModels
@@ -53,7 +53,7 @@ namespace gatherteamproject.ViewModels
 
         private BasicGeoposition _selectedPosition;
 
-        public void SaveAddress(MapControl sender, MapInputEventArgs args)
+        /*public void SaveAddress(MapControl sender, MapInputEventArgs args)
         {
             _selectedPosition = args.Location.Position;
             var message = new MessageDialog("X=" + _selectedPosition.Latitude + "\nY=" + _selectedPosition.Longitude);
@@ -66,7 +66,7 @@ namespace gatherteamproject.ViewModels
 
             message.ShowAsync();
         }
-
+        */
         private void SelectPlace(IUICommand command)
         {
             var geoPosition = new Geopoint(_selectedPosition);

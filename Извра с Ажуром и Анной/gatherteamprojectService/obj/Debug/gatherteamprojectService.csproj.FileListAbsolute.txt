@@ -263,6 +263,5 @@ D:\gatherTeam\Извра с Ажуром и Анной\gatherteamprojectService\
 D:\gatherTeam\Извра с Ажуром и Анной\gatherteamprojectService\bin\ru\System.Spatial.resources.dll
 D:\gatherTeam\Извра с Ажуром и Анной\gatherteamprojectService\bin\zh-Hans\System.Spatial.resources.dll
 D:\gatherTeam\Извра с Ажуром и Анной\gatherteamprojectService\bin\zh-Hant\System.Spatial.resources.dll
-D:\gatherTeam\Извра с Ажуром и Анной\gatherteamprojectService\obj\Debug\gatherteamprojectService.csprojResolveAssemblyReference.cache
 D:\gatherTeam\Извра с Ажуром и Анной\gatherteamprojectService\obj\Debug\gatherteamprojectService.dll
 D:\gatherTeam\Извра с Ажуром и Анной\gatherteamprojectService\obj\Debug\gatherteamprojectService.pdb

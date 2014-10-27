@@ -16,17 +16,17 @@ using gatherteamproject;
 
 // Документацию по шаблону элемента пустой страницы см. по адресу http://go.microsoft.com/fwlink/?LinkID=390556
 using gatherteamproject.ViewModels;
-using gatherteamproject.Views;
+
 namespace gatherteamproject
 {
     /// <summary>
     /// Пустая страница, которую можно использовать саму по себе или для перехода внутри фрейма.
     /// </summary>
-    public sealed partial class UserPage : Page
+    sealed partial class UserPage : Page
     {
         public UserPage()
         {
-            //this.InitializeComponent();
+            this.InitializeComponent();
             var userProgileViewModel = new UserViewModel();
             userProgileViewModel.OpenCreateGamePage += OpenProfilePageHandler;
             userProgileViewModel.OpenCreateTournamentPage += OpenProfilePageHandler;

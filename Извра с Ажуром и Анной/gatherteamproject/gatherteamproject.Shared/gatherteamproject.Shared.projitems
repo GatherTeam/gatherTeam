@@ -25,7 +25,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)MapPage.xaml.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RegisterPage.xaml.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SelectGamePage.xaml.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SettigsPage.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SettingsPage.xaml.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StartPage.xaml.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UserPage.xaml.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />

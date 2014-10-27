@@ -99,14 +99,6 @@ D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gathert
 D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.Windows\obj\Debug\gatherteamproject.Windows.pdb
 D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.Windows\obj\Debug\Microsoft.WindowsAzure.Mobile\en-US\Microsoft.WindowsAzure.MobileServices.Resources.resw
 D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.Windows\obj\Debug\gatherteamproject.Windows.csproj.GenerateResource.Cache
-D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.Windows\obj\Debug\Microsoft.WindowsAzure.Mobile\layout.resfiles
-D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.Windows\obj\Debug\Microsoft.WindowsAzure.Mobile\layout.resfiles.intermediate
-D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.Windows\obj\Debug\Microsoft.WindowsAzure.Mobile\Resources.resfiles
-D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.Windows\obj\Debug\Microsoft.WindowsAzure.Mobile\Resources.resfiles.intermediate
-D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.Windows\obj\Debug\Microsoft.WindowsAzure.Mobile\pri.resfiles
-D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.Windows\obj\Debug\Microsoft.WindowsAzure.Mobile\pri.resfiles.intermediate
-D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.Windows\obj\Debug\Microsoft.WindowsAzure.Mobile\priconfig.xml
-D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.Windows\obj\Debug\Microsoft.WindowsAzure.Mobile\priconfig.xml.intermediate
 D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.Windows\obj\Debug\Microsoft.WindowsAzure.Mobile.pri
 D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.Windows\obj\Debug\Microsoft.WindowsAzure.Mobile\qualifiers.txt
 D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.Windows\obj\Debug\priconfig.xml

@@ -1,6 +1,15 @@
 ﻿using System.Collections.ObjectModel;
 using gatherteamproject;
-using gatherteamproject.Views;
+using gatherteamproject;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.WindowsAzure.MobileServices;
+using Windows.UI.Popups;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Navigation;
 
 namespace gatherteamproject.ViewModels
 {
@@ -30,8 +39,61 @@ namespace gatherteamproject.ViewModels
             }
         }
 
-        private void Create()
+        private MobileServiceCollection<TodoItem, TodoItem> items;
+        private IMobileServiceTable<TodoItem> todoTable = App.MobileService.GetTable<TodoItem>();
+
+       
+
+        private async Task InsertTodoItem(TodoItem todoItem)
         {
+            // This code inserts a new TodoItem into the database. When the operation completes
+            // and Mobile Services has assigned an Id, the item is added to the CollectionView
+            await todoTable.InsertAsync(todoItem);
+            items.Add(todoItem);
+        }
+
+        private async Task RefreshTodoItems()
+        {
+            MobileServiceInvalidOperationException exception = null;
+            try
+            {
+                // This code refreshes the entries in the list view by querying the TodoItems table.
+                // The query excludes completed TodoItems
+                items = await todoTable
+                    .Where(todoItem => todoItem.Complete == false)
+                    .ToCollectionAsync();
+            }
+            catch (MobileServiceInvalidOperationException e)
+            {
+                exception = e;
+            }
+
+            if (exception != null)
+            {
+                await new MessageDialog(exception.Message, "Error loading items").ShowAsync();
+            }
+            else
+            {
+                //ListItems.ItemsSource = items;
+                //this._createComman.IsEnabled = true;
+            }
+        }
+
+        private async Task UpdateCheckedTodoItem(TodoItem item)
+        {
+            // This code takes a freshly completed TodoItem and updates the database. When the MobileService 
+            // responds, the item is removed from the list 
+            await todoTable.UpdateAsync(item);
+            items.Remove(item);
+           // ListItems.Focus(Windows.UI.Xaml.FocusState.Unfocused);
+        }
+
+        private async  void Create()
+        {
+
+            var todoItem = new TodoItem { Text = "Success2!" };
+            await InsertTodoItem(todoItem);
+            
           /*  if (CreateEvent != null) CreateEvent();
             DataBase.LocalDB.InsertItem(new Models.GameModel
             {

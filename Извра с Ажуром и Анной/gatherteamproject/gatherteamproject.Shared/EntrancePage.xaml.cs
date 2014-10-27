@@ -17,12 +17,12 @@ using Windows.UI.Xaml.Navigation;
 //using GatherTeam.DataBase;
 using gatherteamproject.ViewModels;
 
-namespace gatherteamproject.Views
+namespace gatherteamproject
 {
     /// <summary>
     /// Пустая страница, которую можно использовать саму по себе или для перехода внутри фрейма.
     /// </summary>
-    public sealed partial class EntrancePage : Page
+    sealed partial class EntrancePage : Page
     {
         public EntrancePage()
         {

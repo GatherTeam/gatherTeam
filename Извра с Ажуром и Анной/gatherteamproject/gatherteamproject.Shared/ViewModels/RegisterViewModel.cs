@@ -1,5 +1,5 @@
 ﻿using gatherteamproject;
-using gatherteamproject.Views;
+
 
 namespace gatherteamproject.ViewModels
 {

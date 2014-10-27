@@ -124,31 +124,33 @@ namespace gatherteamproject.gatherteamproject_WindowsPhone_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[11];
+            _typeNameTable = new string[12];
             _typeNameTable[0] = "gatherteamproject.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "gatherteamproject.Views.CreateGamePage";
-            _typeNameTable[4] = "gatherteamproject.Views.EntrancePage";
-            _typeNameTable[5] = "gatherteamproject.Views.MapPage";
-            _typeNameTable[6] = "gatherteamproject.Views.RegisterPage";
-            _typeNameTable[7] = "gatherteamproject.Views.SelectGamePage";
-            _typeNameTable[8] = "gatherteamproject.Views.SettingsPage";
-            _typeNameTable[9] = "gatherteamproject.Views.StartPage";
-            _typeNameTable[10] = "gatherteamproject.Views.UserPage";
+            _typeNameTable[3] = "gatherteamproject.Views.BlankPage1";
+            _typeNameTable[4] = "gatherteamproject.CreateGamePage";
+            _typeNameTable[5] = "gatherteamproject.EntrancePage";
+            _typeNameTable[6] = "gatherteamproject.MapPage";
+            _typeNameTable[7] = "gatherteamproject.RegisterPage";
+            _typeNameTable[8] = "gatherteamproject.SelectGamePage";
+            _typeNameTable[9] = "gatherteamproject.SettingsPage";
+            _typeNameTable[10] = "gatherteamproject.StartPage";
+            _typeNameTable[11] = "gatherteamproject.UserPage";
 
-            _typeTable = new global::System.Type[11];
+            _typeTable = new global::System.Type[12];
             _typeTable[0] = typeof(global::gatherteamproject.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::gatherteamproject.Views.CreateGamePage);
-            _typeTable[4] = typeof(global::gatherteamproject.Views.EntrancePage);
-            _typeTable[5] = typeof(global::gatherteamproject.Views.MapPage);
-            _typeTable[6] = typeof(global::gatherteamproject.Views.RegisterPage);
-            _typeTable[7] = typeof(global::gatherteamproject.Views.SelectGamePage);
-            _typeTable[8] = typeof(global::gatherteamproject.Views.SettingsPage);
-            _typeTable[9] = typeof(global::gatherteamproject.Views.StartPage);
-            _typeTable[10] = typeof(global::gatherteamproject.Views.UserPage);
+            _typeTable[3] = typeof(global::gatherteamproject.Views.BlankPage1);
+            _typeTable[4] = typeof(global::gatherteamproject.CreateGamePage);
+            _typeTable[5] = typeof(global::gatherteamproject.EntrancePage);
+            _typeTable[6] = typeof(global::gatherteamproject.MapPage);
+            _typeTable[7] = typeof(global::gatherteamproject.RegisterPage);
+            _typeTable[8] = typeof(global::gatherteamproject.SelectGamePage);
+            _typeTable[9] = typeof(global::gatherteamproject.SettingsPage);
+            _typeTable[10] = typeof(global::gatherteamproject.StartPage);
+            _typeTable[11] = typeof(global::gatherteamproject.UserPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -184,14 +186,15 @@ namespace gatherteamproject.gatherteamproject_WindowsPhone_XamlTypeInfo
         }
 
         private object Activate_0_MainPage() { return new global::gatherteamproject.MainPage(); }
-        private object Activate_3_CreateGamePage() { return new global::gatherteamproject.Views.CreateGamePage(); }
-        private object Activate_4_EntrancePage() { return new global::gatherteamproject.Views.EntrancePage(); }
-        private object Activate_5_MapPage() { return new global::gatherteamproject.Views.MapPage(); }
-        private object Activate_6_RegisterPage() { return new global::gatherteamproject.Views.RegisterPage(); }
-        private object Activate_7_SelectGamePage() { return new global::gatherteamproject.Views.SelectGamePage(); }
-        private object Activate_8_SettingsPage() { return new global::gatherteamproject.Views.SettingsPage(); }
-        private object Activate_9_StartPage() { return new global::gatherteamproject.Views.StartPage(); }
-        private object Activate_10_UserPage() { return new global::gatherteamproject.Views.UserPage(); }
+        private object Activate_3_BlankPage1() { return new global::gatherteamproject.Views.BlankPage1(); }
+        private object Activate_4_CreateGamePage() { return new global::gatherteamproject.CreateGamePage(); }
+        private object Activate_5_EntrancePage() { return new global::gatherteamproject.EntrancePage(); }
+        private object Activate_6_MapPage() { return new global::gatherteamproject.MapPage(); }
+        private object Activate_7_RegisterPage() { return new global::gatherteamproject.RegisterPage(); }
+        private object Activate_8_SelectGamePage() { return new global::gatherteamproject.SelectGamePage(); }
+        private object Activate_9_SettingsPage() { return new global::gatherteamproject.SettingsPage(); }
+        private object Activate_10_StartPage() { return new global::gatherteamproject.StartPage(); }
+        private object Activate_11_UserPage() { return new global::gatherteamproject.UserPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -218,58 +221,65 @@ namespace gatherteamproject.gatherteamproject_WindowsPhone_XamlTypeInfo
                 xamlType = new global::gatherteamproject.gatherteamproject_WindowsPhone_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  gatherteamproject.Views.CreateGamePage
+            case 3:   //  gatherteamproject.Views.BlankPage1
                 userType = new global::gatherteamproject.gatherteamproject_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_CreateGamePage;
+                userType.Activator = Activate_3_BlankPage1;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 4:   //  gatherteamproject.Views.EntrancePage
+            case 4:   //  gatherteamproject.CreateGamePage
                 userType = new global::gatherteamproject.gatherteamproject_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_4_EntrancePage;
+                userType.Activator = Activate_4_CreateGamePage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 5:   //  gatherteamproject.Views.MapPage
+            case 5:   //  gatherteamproject.EntrancePage
                 userType = new global::gatherteamproject.gatherteamproject_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_5_MapPage;
+                userType.Activator = Activate_5_EntrancePage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 6:   //  gatherteamproject.Views.RegisterPage
+            case 6:   //  gatherteamproject.MapPage
                 userType = new global::gatherteamproject.gatherteamproject_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_6_RegisterPage;
+                userType.Activator = Activate_6_MapPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 7:   //  gatherteamproject.Views.SelectGamePage
+            case 7:   //  gatherteamproject.RegisterPage
                 userType = new global::gatherteamproject.gatherteamproject_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_7_SelectGamePage;
+                userType.Activator = Activate_7_RegisterPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 8:   //  gatherteamproject.Views.SettingsPage
+            case 8:   //  gatherteamproject.SelectGamePage
                 userType = new global::gatherteamproject.gatherteamproject_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_8_SettingsPage;
+                userType.Activator = Activate_8_SelectGamePage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 9:   //  gatherteamproject.Views.StartPage
+            case 9:   //  gatherteamproject.SettingsPage
                 userType = new global::gatherteamproject.gatherteamproject_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_9_StartPage;
+                userType.Activator = Activate_9_SettingsPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 10:   //  gatherteamproject.Views.UserPage
+            case 10:   //  gatherteamproject.StartPage
                 userType = new global::gatherteamproject.gatherteamproject_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_10_UserPage;
+                userType.Activator = Activate_10_StartPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 11:   //  gatherteamproject.UserPage
+                userType = new global::gatherteamproject.gatherteamproject_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_11_UserPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

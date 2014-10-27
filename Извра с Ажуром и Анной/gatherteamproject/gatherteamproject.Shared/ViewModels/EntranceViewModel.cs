@@ -1,4 +1,4 @@
-﻿using gatherteamproject.Views;
+﻿
 
 namespace gatherteamproject.ViewModels
 {

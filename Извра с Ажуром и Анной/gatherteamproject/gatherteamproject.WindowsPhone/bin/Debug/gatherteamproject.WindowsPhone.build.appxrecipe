@@ -61,29 +61,32 @@
     <AppxPackagedFile Include="D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.WindowsPhone\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.WindowsPhone\bin\Debug\Views\CreateGamePage.xbf">
-      <PackagePath>Views\CreateGamePage.xbf</PackagePath>
+    <AppxPackagedFile Include="D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.WindowsPhone\bin\Debug\Views\BlankPage1.xbf">
+      <PackagePath>Views\BlankPage1.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.WindowsPhone\bin\Debug\Views\EntrancePage.xbf">
-      <PackagePath>Views\EntrancePage.xbf</PackagePath>
+    <AppxPackagedFile Include="D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.WindowsPhone\bin\Debug\CreateGamePage.xbf">
+      <PackagePath>CreateGamePage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.WindowsPhone\bin\Debug\Views\MapPage.xbf">
-      <PackagePath>Views\MapPage.xbf</PackagePath>
+    <AppxPackagedFile Include="D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.WindowsPhone\bin\Debug\EntrancePage.xbf">
+      <PackagePath>EntrancePage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.WindowsPhone\bin\Debug\Views\RegisterPage.xbf">
-      <PackagePath>Views\RegisterPage.xbf</PackagePath>
+    <AppxPackagedFile Include="D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.WindowsPhone\bin\Debug\MapPage.xbf">
+      <PackagePath>MapPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.WindowsPhone\bin\Debug\Views\SelectGamePage.xbf">
-      <PackagePath>Views\SelectGamePage.xbf</PackagePath>
+    <AppxPackagedFile Include="D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.WindowsPhone\bin\Debug\RegisterPage.xbf">
+      <PackagePath>RegisterPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.WindowsPhone\bin\Debug\Views\SettingsPage.xbf">
-      <PackagePath>Views\SettingsPage.xbf</PackagePath>
+    <AppxPackagedFile Include="D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.WindowsPhone\bin\Debug\SelectGamePage.xbf">
+      <PackagePath>SelectGamePage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.WindowsPhone\bin\Debug\Views\StartPage.xbf">
-      <PackagePath>Views\StartPage.xbf</PackagePath>
+    <AppxPackagedFile Include="D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.WindowsPhone\bin\Debug\SettingsPage.xbf">
+      <PackagePath>SettingsPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.WindowsPhone\bin\Debug\Views\UserPage.xbf">
-      <PackagePath>Views\UserPage.xbf</PackagePath>
+    <AppxPackagedFile Include="D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.WindowsPhone\bin\Debug\StartPage.xbf">
+      <PackagePath>StartPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.WindowsPhone\bin\Debug\UserPage.xbf">
+      <PackagePath>UserPage.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.WindowsPhone\bin\Debug\gatherteamproject.WindowsPhone.xr.xml">
       <PackagePath>gatherteamproject.WindowsPhone.xr.xml</PackagePath>

@@ -8,8 +8,6 @@
     <RootPropertyPathName Name="EnterCommand" />
     <RootPropertyPathName Name="PasswordInput" />
     <RootPropertyPathName Name="LoginInput" />
-    <RootPropertyPathName Name="CenterCoords" />
-    <RootPropertyPathName Name="ZoomLevel" />
     <RootPropertyPathName Name="CreateProfile" />
     <RootPropertyPathName Name="ConfirmPassword" />
     <RootPropertyPathName Name="Password" />
@@ -63,11 +61,13 @@
       <RootProperty Name="BorderThickness" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
+      <RootProperty Name="Name" />
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="Style" />
       <RootProperty Name="ItemsSource" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TimePicker">
+      <RootProperty Name="Name" />
       <RootProperty Name="Style" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.DatePicker">
@@ -141,15 +141,11 @@
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="gatherteamproject.MainPage" />
-    <RootType FullName="gatherteamproject.Views.CreateGamePage" />
-    <RootType FullName="gatherteamproject.Views.EntrancePage" />
-    <RootType FullName="Windows.UI.Xaml.Controls.Maps.MapControl">
-      <RootProperty Name="Center" />
-      <RootProperty Name="ZoomLevel" />
-      <RootEvent Name="MapHolding" />
-    </RootType>
-    <RootType FullName="gatherteamproject.Views.MapPage" />
-    <RootType FullName="gatherteamproject.Views.RegisterPage" />
+    <RootType FullName="gatherteamproject.Views.BlankPage1" />
+    <RootType FullName="gatherteamproject.CreateGamePage" />
+    <RootType FullName="gatherteamproject.EntrancePage" />
+    <RootType FullName="gatherteamproject.MapPage" />
+    <RootType FullName="gatherteamproject.RegisterPage" />
     <RootType FullName="Windows.UI.Xaml.Data.CollectionViewSource">
       <RootProperty Name="IsSourceGrouped" />
       <RootProperty Name="Source" />
@@ -161,9 +157,9 @@
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="ItemTemplate" />
     </RootType>
-    <RootType FullName="gatherteamproject.Views.SelectGamePage" />
-    <RootType FullName="gatherteamproject.Views.SettingsPage" />
-    <RootType FullName="gatherteamproject.Views.StartPage" />
+    <RootType FullName="gatherteamproject.SelectGamePage" />
+    <RootType FullName="gatherteamproject.SettingsPage" />
+    <RootType FullName="gatherteamproject.StartPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.CommandBar">
       <RootProperty Name="PrimaryCommands" />
     </RootType>
@@ -180,6 +176,6 @@
       <RootProperty Name="Style" />
       <RootProperty Name="Content" />
     </RootType>
-    <RootType FullName="gatherteamproject.Views.UserPage" />
+    <RootType FullName="gatherteamproject.UserPage" />
   </Roots.RootTypes>
 </Roots>

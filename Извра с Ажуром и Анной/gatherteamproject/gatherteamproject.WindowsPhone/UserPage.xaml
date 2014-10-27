@@ -1,0 +1,73 @@
+﻿<Page
+    x:Class="gatherteamproject.UserPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    
+    xmlns:local="using:gatherteamproject"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.BottomAppBar>
+        <CommandBar x:Name="appBar">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Command="{Binding SettingsCommand}" Icon="Setting" Label="Настройки"/>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid>
+        <Grid x:Name="LayoutRoot" Background="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--TitlePanel содержит имя приложения и заголовок страницы-->
+            <StackPanel Grid.Row="0" Margin="12,17,0,28">
+                <TextBlock Text="Gather Team" Style="{StaticResource TitleTextBlockStyle}"/>
+            </StackPanel>
+
+
+            <!--ContentPanel – поместите здесь дополнительное содержимое-->
+            <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+                <Pivot x:Name="UserPivot">
+                    <PivotItem x:Name="Choice" Header="Выбор" Style="{StaticResource PivotTitleContentControlStyle}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Button Content="Выбрать игру" Style="{StaticResource ButtonStyle}" Grid.Row ="0" FontSize="40" ></Button>
+                            <Button Content="Выбрать турнир" Style="{StaticResource ButtonStyle}" Grid.Row ="1" FontSize="40"></Button>
+                        </Grid>
+                    </PivotItem>
+                    <PivotItem x:Name="Create" Header="Создание" Style="{StaticResource PivotTitleContentControlStyle}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Button Command="{Binding CreateGameCommand}" Content="Создать игру" Style="{StaticResource ButtonStyle}" Grid.Row ="0" FontSize="40" ></Button>
+                            <Button Command="{Binding CreateTournamentCommand}" Content="Создать турнир" Style="{StaticResource ButtonStyle}" Grid.Row ="1" FontSize="40" ></Button>
+                        </Grid>
+
+                    </PivotItem>
+                    <PivotItem x:Name="UserGames" Header="Мои игры" Style="{StaticResource PivotTitleContentControlStyle}">
+                        <Grid>
+
+                        </Grid>
+                    </PivotItem>
+                    <PivotItem x:Name="UserProfile" Header="Мой профиль" Style="{ThemeResource PivotTitleContentControlStyle}">
+                        <Grid>
+
+                        </Grid>
+                    </PivotItem>
+                </Pivot>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,22 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.WindowsAzure.MobileServices;
-using Windows.UI.Popups;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using gatherteamproject.ViewModels;
-using gatherteamproject.Views;
+
 using gatherteamproject;
 
-namespace gatherteamproject.Views
+namespace gatherteamproject
 {
     sealed partial class StartPage: Page
     {
         public StartPage()
         {
+            
             this.InitializeComponent();
             var startViewModel = new StartViewModel();
             startViewModel.EnterEvent += EnterHandler;
