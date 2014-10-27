@@ -1,4 +1,6 @@
 ﻿using System.Collections.ObjectModel;
+using Windows.Devices.Geolocation;
+using GatherTeam.DataBase;
 using GatherTeam.Models;
 using GatherTeam.Views;
 
@@ -33,16 +35,16 @@ namespace GatherTeam.ViewModels
         private void Create()
         {
             if (CreateEvent != null) CreateEvent();
-            DataBase.LocalDB.InsertItem(new Models.GameModel 
+            MobileServicesSync.InsertItem(new GameModel
             {
-                Id = "ololo",
-                Format = GameModel.GameFormat.SixToSix ,
-                GameAddress = new GameAddress(),
-                GameName = "thisis sparta!!!11!!",
-                Time = "11:22",
-                Version = "first"
+                Format = GameModel.GameFormat.FiveToFive,
+                Id = 1,
+                GameAddress = new GameAddress{Address = "qwe", Geoposition = new Geopoint(new BasicGeoposition{Altitude = 1, Latitude = 2, Longitude = 3}), Id = 3},
+                GameName = "sss",
+                Time = "222",                
+                Version = "1"
             });
-            DataBase.LocalDB.Push();
+            MobileServicesSync.Push();
         }
     }
 }

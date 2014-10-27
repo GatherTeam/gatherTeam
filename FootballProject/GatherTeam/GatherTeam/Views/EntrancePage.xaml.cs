@@ -14,7 +14,6 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // Документацию по шаблону элемента пустой страницы см. по адресу http://go.microsoft.com/fwlink/?LinkID=390556
-using GatherTeam.DataBase;
 using GatherTeam.ViewModels;
 
 namespace GatherTeam.Views

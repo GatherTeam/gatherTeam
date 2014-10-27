@@ -24,7 +24,7 @@ namespace GatherTeam.ViewModels
         private void Enter()
         {
             if (EnterEvent != null) EnterEvent();
-            LocalDB.InitSQLiteStore();
+            MobileServicesSync.InitSQLiteStore();
         }
     }
 }

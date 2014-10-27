@@ -29,9 +29,6 @@ namespace GatherTeam
     /// </summary>
     public sealed partial class App : Application
     {
-        // http://go.microsoft.com/fwlink/?LinkId=290986&clcid=0x419
-//        public static MobileServiceClient MobileService =
-//            new MobileServiceClient("http://localhost:50523"); 
         // Use this constructor instead after publishing to the cloud 
          public static MobileServiceClient MobileService = new MobileServiceClient( 
          "https://gatherteamproject.azure-mobile.net/", "rAMMhRSCLzQIzaKPdZATfGZdtayKbp10");
