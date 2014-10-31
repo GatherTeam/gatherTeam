@@ -158,6 +158,7 @@
       <RootProperty Name="Children" />
       <RootEvent Name="MapHolding" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Maps.MapPolyline" />
     <RootType FullName="gatherteamproject.MapPage" />
     <RootType FullName="gatherteamproject.RegisterPage" />
     <RootType FullName="Windows.UI.Xaml.Data.CollectionViewSource">
