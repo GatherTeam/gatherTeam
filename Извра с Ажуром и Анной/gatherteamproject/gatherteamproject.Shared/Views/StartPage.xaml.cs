@@ -12,31 +12,34 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-
-
-//using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
-//using Microsoft.WindowsAzure.MobileServices.Sync;
-using Newtonsoft.Json.Linq;
-
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
-
 using gatherteamproject.ViewModels;
+
+using gatherteamproject;
 
 namespace gatherteamproject
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
-    public sealed partial class CreateGamePage : Page
+    sealed partial class StartPage: Page
     {
-        
-        public CreateGamePage()
+        public StartPage()
         {
+            
             this.InitializeComponent();
-            var createGameVm = new CreateGameVM();
-            createGameVm.CreateEvent += CreateGameHandler;
-            this.DataContext = createGameVm;
+            var startViewModel = new StartViewModel();
+            startViewModel.EnterEvent += EnterHandler;
+            startViewModel.RegistrateEvent += RegistrateHandler;
+            this.DataContext = startViewModel;
 
+            // LocalDB.InitSQLiteStore();
+
+            /*LocalDB.InsertItem(new GameModel
+            {
+                Format = GameModel.GameFormat.FiveToFive, 
+                GameAddress = new GameAddress(), 
+                GameName = "", 
+                Id = "1", 
+                Time = "", 
+                Version = ""
+            });*/
         }
 
         /// <summary>
@@ -46,13 +49,16 @@ namespace gatherteamproject
         /// This parameter is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            
         }
 
-         private void CreateGameHandler()
-         {
+        private void EnterHandler()
+        {
+            Frame.Navigate(typeof(EntrancePage));
         }
 
-        
+        private void RegistrateHandler()
+        {
+            Frame.Navigate(typeof(RegisterPage));
+        }
     }
 }
