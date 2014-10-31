@@ -5,6 +5,7 @@
     xmlns:local="using:gatherteamproject"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:maps="using:Windows.UI.Xaml.Controls.Maps"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -25,6 +26,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -33,6 +35,9 @@
             <TimePicker Grid.Row="2" Style="{StaticResource TimePickerStyle}"/>
             <DatePicker Grid.Row="3" Style="{StaticResource DatePickerStyle}"/>
             <Button Command="{Binding CreateCommand}" Content="Создать" Grid.Row="4" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Right"   VerticalAlignment="Top" FontSize="30" Name="CreateGame"  />
+            <maps:MapControl Grid.Row="5" MapHolding="MapHoldingHandler" Center="{Binding Path=CenterCoords}" ZoomLevel="{Binding Path=ZoomLevel}">
+                
+            </maps:MapControl>
         </Grid>
     </Grid>
 </Page>

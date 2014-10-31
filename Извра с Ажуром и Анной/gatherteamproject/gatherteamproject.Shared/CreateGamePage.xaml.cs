@@ -13,6 +13,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+using Windows.UI.Xaml.Controls.Maps;
+
 
 //using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
 //using Microsoft.WindowsAzure.MobileServices.Sync;
@@ -29,13 +31,13 @@ namespace gatherteamproject
     /// </summary>
     public sealed partial class CreateGamePage : Page
     {
-        
+        private readonly CreateGameVM _createGameVm;
         public CreateGamePage()
         {
             this.InitializeComponent();
-            var createGameVm = new CreateGameVM();
-            createGameVm.CreateEvent += CreateGameHandler;
-            this.DataContext = createGameVm;
+            _createGameVm = new CreateGameVM();
+            _createGameVm.CreateEvent += CreateGameHandler;
+            this.DataContext = _createGameVm;
 
         }
 
@@ -51,9 +53,13 @@ namespace gatherteamproject
 
          private void CreateGameHandler()
          {
-           
-            Frame.Navigate(typeof(MapPage));
-        }
+//            Frame.Navigate(typeof(MapPage));
+         }
+
+         public void MapHoldingHandler(MapControl sender, MapInputEventArgs args)
+         {
+             _createGameVm.SaveAddress(sender, args);
+         }
 
         
     }

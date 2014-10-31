@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
+using Windows.Devices.Geolocation;
 using gatherteamproject;
 using gatherteamproject;
 using System;
@@ -11,16 +12,45 @@ using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Xaml.Controls.Maps;
 
 namespace gatherteamproject.ViewModels
 {
     public class CreateGameVM : BaseViewModel
     {
-
         public event OpenPageDelegate CreateEvent;
-        private DelegateCommand _createCommand;
 
+        private DelegateCommand _createCommand;
+        private const int ZOOM_LEVEL = 10;
+        private const double SPB_CenterX = 59.95;
+        private const double SPB_CenterY = 30.36;
         private readonly ObservableCollection<string> _gameFormats = new ObservableCollection<string> { "5x5", "6x6", "другой" };
+
+        public double CenterX
+        {
+            get { return SPB_CenterX; }
+        }
+
+        public double CenterY
+        {
+            get { return SPB_CenterY; }
+        }
+
+        public Geopoint CenterCoords
+        {
+            get
+            {
+                var basicCoords = new BasicGeoposition();
+                basicCoords.Latitude = CenterX;
+                basicCoords.Longitude = CenterY;
+                return new Geopoint(basicCoords);
+            }
+        }
+
+        public int ZoomLevel
+        {
+            get { return ZOOM_LEVEL; }
+        }
 
         public ObservableCollection<string> GameFormats { get { return _gameFormats; } }
 
@@ -94,6 +124,7 @@ namespace gatherteamproject.ViewModels
                 //this._createComman.IsEnabled = true;
             }
         }
+        private BasicGeoposition _selectedPosition;
 
         private async Task UpdateCheckedTodoItem(TodoItem item)
         {
@@ -106,21 +137,21 @@ namespace gatherteamproject.ViewModels
 
         private async void Create()
         {
-
-//            var todoItem = new TodoItem { Text = "Success2!" };
-//            await InsertTodoItem(todoItem);
-            
            if (CreateEvent != null) CreateEvent();
-           /*  DataBase.LocalDB.InsertItem(new Models.GameModel
-            {
-                Id = "ololo",
-                Format = GameModel.GameFormat.SixToSix,
-                GameAddress = new GameAddress(),
-                GameName = "thisis sparta!!!11!!",
-                Time = "11:22",
-                Version = "first"
-            });
-            DataBase.LocalDB.Push();*/
+        }
+
+        public void SaveAddress(MapControl sender, MapInputEventArgs args)
+        {
+            _selectedPosition = args.Location.Position;
+            var message = new MessageDialog("X=" + _selectedPosition.Latitude + "\nY=" + _selectedPosition.Longitude);
+            message.Commands.Add(new UICommand("Выбрать место"));
+            message.Commands.Add(new UICommand("Отмена"));
+
+            message.DefaultCommandIndex = 0;
+
+            message.CancelCommandIndex = 1;
+
+            message.ShowAsync();
         }
     }
 }
