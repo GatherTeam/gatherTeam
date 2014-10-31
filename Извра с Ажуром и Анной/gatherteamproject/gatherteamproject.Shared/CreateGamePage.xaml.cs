@@ -52,7 +52,7 @@ namespace gatherteamproject
          private void CreateGameHandler()
          {
            
-            //Frame.Navigate(typeof(MapPage));
+            Frame.Navigate(typeof(MapPage));
         }
 
         

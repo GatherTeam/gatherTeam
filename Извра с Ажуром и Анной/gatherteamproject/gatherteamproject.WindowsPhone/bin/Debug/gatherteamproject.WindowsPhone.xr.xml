@@ -4,10 +4,14 @@
     <RootPropertyPathName Name="Complete" />
     <RootPropertyPathName Name="Text" />
     <RootPropertyPathName Name="CreateCommand" />
+    <RootPropertyPathName Name="ListOfAddresses" />
+    <RootPropertyPathName Name="SelectedAddress" />
     <RootPropertyPathName Name="GameFormats" />
     <RootPropertyPathName Name="EnterCommand" />
     <RootPropertyPathName Name="PasswordInput" />
     <RootPropertyPathName Name="LoginInput" />
+    <RootPropertyPathName Name="CenterCoords" />
+    <RootPropertyPathName Name="ZoomLevel" />
     <RootPropertyPathName Name="CreateProfile" />
     <RootPropertyPathName Name="ConfirmPassword" />
     <RootPropertyPathName Name="Password" />
@@ -67,7 +71,6 @@
       <RootProperty Name="ItemsSource" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TimePicker">
-      <RootProperty Name="Name" />
       <RootProperty Name="Style" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.DatePicker">
@@ -142,8 +145,19 @@
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="gatherteamproject.MainPage" />
     <RootType FullName="gatherteamproject.Views.BlankPage1" />
+    <RootType FullName="Windows.UI.Xaml.Controls.AutoSuggestBox">
+      <RootProperty Name="PlaceholderText" />
+      <RootProperty Name="ItemsSource" />
+      <RootProperty Name="Text" />
+    </RootType>
     <RootType FullName="gatherteamproject.CreateGamePage" />
     <RootType FullName="gatherteamproject.EntrancePage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Maps.MapControl">
+      <RootProperty Name="Center" />
+      <RootProperty Name="ZoomLevel" />
+      <RootProperty Name="Children" />
+      <RootEvent Name="MapHolding" />
+    </RootType>
     <RootType FullName="gatherteamproject.MapPage" />
     <RootType FullName="gatherteamproject.RegisterPage" />
     <RootType FullName="Windows.UI.Xaml.Data.CollectionViewSource">

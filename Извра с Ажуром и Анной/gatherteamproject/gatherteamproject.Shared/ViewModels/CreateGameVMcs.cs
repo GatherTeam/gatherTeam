@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Linq;
 using gatherteamproject;
 using gatherteamproject;
 using System;
@@ -19,12 +20,29 @@ namespace gatherteamproject.ViewModels
         public event OpenPageDelegate CreateEvent;
         private DelegateCommand _createCommand;
 
-
         private readonly ObservableCollection<string> _gameFormats = new ObservableCollection<string> { "5x5", "6x6", "другой" };
 
         public ObservableCollection<string> GameFormats { get { return _gameFormats; } }
 
+        public ObservableCollection<string> ListOfAddresses
+        {
+            get
+            {
+//                UpdateDataBase();
+                var list = new ObservableCollection<string>();
+                if (items == null) return list;
+                foreach (var todoItem in items)
+                {
+                    list.Add(todoItem.Text);
+                }
+                return list;
+            }
+        }
 
+        private async void UpdateDataBase()
+        {
+            await RefreshTodoItems();
+        }
 
         public DelegateCommand CreateCommand
         {
@@ -41,8 +59,6 @@ namespace gatherteamproject.ViewModels
 
         private MobileServiceCollection<TodoItem, TodoItem> items;
         private IMobileServiceTable<TodoItem> todoTable = App.MobileService.GetTable<TodoItem>();
-
-       
 
         private async Task InsertTodoItem(TodoItem todoItem)
         {
@@ -88,14 +104,14 @@ namespace gatherteamproject.ViewModels
            // ListItems.Focus(Windows.UI.Xaml.FocusState.Unfocused);
         }
 
-        private async  void Create()
+        private async void Create()
         {
 
-            var todoItem = new TodoItem { Text = "Success2!" };
-            await InsertTodoItem(todoItem);
+//            var todoItem = new TodoItem { Text = "Success2!" };
+//            await InsertTodoItem(todoItem);
             
-          /*  if (CreateEvent != null) CreateEvent();
-            DataBase.LocalDB.InsertItem(new Models.GameModel
+           if (CreateEvent != null) CreateEvent();
+           /*  DataBase.LocalDB.InsertItem(new Models.GameModel
             {
                 Id = "ololo",
                 Format = GameModel.GameFormat.SixToSix,

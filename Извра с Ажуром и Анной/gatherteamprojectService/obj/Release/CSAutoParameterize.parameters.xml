@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="MS_TableConnectionString-Web.config Connection String" description="MS_TableConnectionString Строка подключения в web.config, используемая приложением для доступа к базе данных." defaultValue="Data Source=(localdb)\v11.0;AttachDbFilename=|DataDirectory|\aspnet-gatherteamprojectService-20141027085917.mdf;Initial Catalog=aspnet-gatherteamprojectService-20141027085917;Integrated Security=True;MultipleActiveResultSets=True" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="D:\\gatherTeam\\Извра\ с\ Ажуром\ и\ Анной\\gatherteamprojectService\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MS_TableConnectionString']/@connectionString" />
-  </parameter>
-  <parameter name="MS_NotificationHubConnectionString-Web.config Connection String" description="MS_NotificationHubConnectionString Строка подключения в web.config, используемая приложением для доступа к базе данных." defaultValue="Endpoint=sb://[your namespace].servicebus.windows.net;SharedSecretIssuer=owner;SharedSecretValue=[your secret]" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="D:\\gatherTeam\\Извра\ с\ Ажуром\ и\ Анной\\gatherteamprojectService\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MS_NotificationHubConnectionString']/@connectionString" />
-  </parameter>
-</parameters>

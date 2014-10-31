@@ -1,1 +1,1 @@
-D:\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.WindowsPhone\gatherteamproject.WindowsPhone.csproj;neutral
+C:\Users\Александр\Desktop\FootballApp\gatherTeam\Извра с Ажуром и Анной\gatherteamproject\gatherteamproject.WindowsPhone\gatherteamproject.WindowsPhone.csproj;neutral

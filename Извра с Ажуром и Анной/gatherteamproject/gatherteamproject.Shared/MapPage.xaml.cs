@@ -8,7 +8,7 @@ using Windows.Foundation.Collections;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-//using Windows.UI.Xaml.Controls.Maps;
+using Windows.UI.Xaml.Controls.Maps;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
@@ -43,9 +43,9 @@ namespace gatherteamproject
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
         }
-   /*     public void MapHoldingHandler(MapControl sender, MapInputEventArgs args)
+        public void MapHoldingHandler(MapControl sender, MapInputEventArgs args)
         {
             _mapViewModel.SaveAddress(sender, args);
-        }*/
+        }
     }
 }
