@@ -1,5 +1,6 @@
 ﻿
 using Newtonsoft.Json;
+using System;
 
 
 namespace gatherteamproject
@@ -14,12 +15,13 @@ namespace gatherteamproject
             Other
         }
 
-        public string Id { get; set; }
+        public int GameID { get; set; }
+        public DateTime GameDate { get; set; }
+        public DateTime GameTime { get; set; }
         [JsonProperty(PropertyName = "format")]
-        public GameFormat Format { get; set; }
-        public string Time { get; set; }
-        public string GameName { get; set; }
-        public GameAddress GameAddress { get; set; }
-        public string Version { get; set; }
+        public string GameMode { get; set; }
+        public int UserID { get; set; }
+        public int GameFieldID { get; set; }
+        
     }
 }

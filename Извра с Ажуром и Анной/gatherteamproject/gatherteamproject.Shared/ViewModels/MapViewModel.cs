@@ -68,11 +68,11 @@ namespace gatherteamproject.ViewModels
         }
         private void SelectPlace(IUICommand command)
         {
-            var geoPosition = new Geopoint(_selectedPosition);
-            var gameAddress = new GameAddress();
-            gameAddress.Address = "okokokoko!!11!";
-            gameAddress.Geoposition = geoPosition;
-            GamePositions.Add(gameAddress);
+           // var geoPosition = new Geopoint(_selectedPosition);
+           // var gameAddress = new GameAddress();
+          //  gameAddress.Address = "okokokoko!!11!";
+            //gameAddress.Geoposition = geoPosition;
+            //GamePositions.Add(gameAddress);
         }
     }
 }

@@ -9,10 +9,13 @@ namespace gatherteamproject
  
         public class UserModel
         {
-            public string Login { get; set; }
-            public string Email { get; set; }
-            public string Password { get; set; }
-            public string Phone { get; set; }
+
+            public int UserID { get; set; }
+            public string UserName { get; set; }
+            public string UserPassword { get; set; }
+            public string UserPhone { get; set; }
+            public string UserEmail { get; set; }
+          
         }
 
 

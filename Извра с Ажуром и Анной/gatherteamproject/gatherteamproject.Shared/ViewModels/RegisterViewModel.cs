@@ -93,7 +93,7 @@ namespace gatherteamproject.ViewModels
         {
             if (CheckData())
             {
-                var newUser = new UserModel { Email = Email, Login = Login, Password = Password, Phone = Phone };
+                var newUser = new UserModel { UserEmail = Email, UserName = Login, UserPassword = Password, UserPhone = Phone };
                 if (OpenProfileEvent != null) OpenProfileEvent();
             }
             else
