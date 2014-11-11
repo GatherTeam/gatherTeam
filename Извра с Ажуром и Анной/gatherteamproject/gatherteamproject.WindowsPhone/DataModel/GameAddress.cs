@@ -4,14 +4,17 @@ namespace gatherteamproject.DataModel
 {
     public class GameAddress
     {
-        [JsonProperty(PropertyName = "Id")]
-        public int Id { get; set; }
+        //[JsonProperty(PropertyName = "Id")]
+        public string Id { get; set; }
+
         [JsonProperty(PropertyName = "gameFieldAddressString")]
         public string GameFieldAddressString { get; set; }
         //public Geopoint Geoposition { get; set; }
-        [JsonProperty(PropertyName = "gameFieldX")]
+
+        [JsonProperty(PropertyName = "GameFieldX")]
         public float GameFieldX {get; set;}
-        [JsonProperty(PropertyName = "gameFieldY")]
+
+        [JsonProperty(PropertyName = "GameFieldY")]
         public float GameFieldY { get; set; }
  
     }

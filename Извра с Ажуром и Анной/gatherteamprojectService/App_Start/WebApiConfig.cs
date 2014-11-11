@@ -32,7 +32,7 @@ namespace gatherteamprojectService
         {
             List<GameAddress> todoItems = new List<GameAddress>
             {
-                new GameAddress {Id = "4343", GameFieldAddressString = "ololo", GameFieldX = 10f, GameFieldY = 15f, CreatedAt = new DateTimeOffset(), Deleted = false, UpdatedAt = new DateTimeOffset()},
+                new GameAddress {Id="nooo", GameFieldAddressString = "TestfromWeb", GameFieldX = 10f, GameFieldY = 15f}
 //                new GameAddress { id = Guid.NewGuid().ToString(), Text = "Second item ololo", Complete = false },
             };
 

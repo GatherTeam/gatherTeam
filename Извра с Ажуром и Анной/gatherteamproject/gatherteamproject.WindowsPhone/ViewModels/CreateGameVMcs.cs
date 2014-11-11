@@ -119,16 +119,15 @@ namespace gatherteamproject.ViewModels
             items.Remove(item);
         }
 
-        private async void CheckTable()
-        {
-        }
+     
 
         private async void Create()
         {
             var newGame = new GameAddress();
-            newGame.GameFieldAddressString = "";
-            newGame.GameFieldX = 10.4f;
-            newGame.GameFieldY = 11.1f;
+            newGame.Id = Guid.NewGuid().ToString();
+            newGame.GameFieldAddressString = "AddressString";
+            newGame.GameFieldX = 10f;
+            newGame.GameFieldY = 11f;
             try
             {
                 await InsertTodoItem(newGame);
