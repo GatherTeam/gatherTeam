@@ -1,13 +1,17 @@
-﻿using Windows.Devices.Geolocation;
+﻿using Newtonsoft.Json;
 
-namespace gatherteamproject
+namespace gatherteamproject.DataModel
 {
     public class GameAddress
     {
-        public int GameFieldID { get; set; }
+        [JsonProperty(PropertyName = "Id")]
+        public int Id { get; set; }
+        [JsonProperty(PropertyName = "gameFieldAddressString")]
         public string GameFieldAddressString { get; set; }
         //public Geopoint Geoposition { get; set; }
+        [JsonProperty(PropertyName = "gameFieldX")]
         public float GameFieldX {get; set;}
+        [JsonProperty(PropertyName = "gameFieldY")]
         public float GameFieldY { get; set; }
  
     }

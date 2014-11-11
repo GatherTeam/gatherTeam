@@ -24,19 +24,28 @@ namespace gatherteamproject
     /// </summary>
     sealed partial class App : Application
     {
+        // http://go.microsoft.com/fwlink/?LinkId=290986&clcid=0x409
+        public static Microsoft.WindowsAzure.MobileServices.MobileServiceClient gathertearmserviceClient = new Microsoft.WindowsAzure.MobileServices.MobileServiceClient(
+        "https://gathertearmservice.azure-mobile.net/",
+        "xpBqJnSgWCIHpDEEIAJxtwaMItuEZL51");
+
+        // http://go.microsoft.com/fwlink/?LinkId=290986&clcid=0x409
+//        public static Microsoft.WindowsAzure.MobileServices.MobileServiceClient gathertearmserviceClient = new Microsoft.WindowsAzure.MobileServices.MobileServiceClient(
+//        "https://gathertearmservice.azure-mobile.net/",
+//        "xpBqJnSgWCIHpDEEIAJxtwaMItuEZL51");
+
 
         // This MobileServiceClient has been configured to communicate with your local
         // test project for debugging purposes.
-//        public static MobileServiceClient MobileService = new MobileServiceClient(
+//        public static MobileServiceClient gathertearmserviceClient = new MobileServiceClient(
 //            "http://localhost:50523"
 //        );
 
         // This MobileServiceClient has been configured to communicate with your Mobile Service's url
         // and application key. You're all set to start working with your Mobile Service!
-        public static MobileServiceClient MobileService = new MobileServiceClient(
-            "https://gatherteamproject.azure-mobile.net/",
-            "rAMMhRSCLzQIzaKPdZATfGZdtayKbp10"
-        );
+//        public static MobileServiceClient gathertearmserviceClient = new MobileServiceClient(
+//           "https://gathertearmservice.azure-mobile.net/", "xpBqJnSgWCIHpDEEIAJxtwaMItuEZL51"
+//        );
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code

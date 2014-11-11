@@ -185,7 +185,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\GameAddressController.cs" />
     <Compile Include="Controllers\TodoItemController.cs" />
+    <Compile Include="DataObjects\GameAddress.cs" />
     <Compile Include="DataObjects\TodoItem.cs" />
     <Compile Include="Models\gatherteamprojectContext.cs" />
     <Compile Include="ScheduledJobs\SampleJob.cs" />
@@ -208,7 +210,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\mobile-gatherteam.pubxml" />
+    <None Include="Properties\PublishProfiles\mobile-gatherteamproject %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\mobile-gatherteamproject.pubxml" />
+    <None Include="Properties\PublishProfiles\mobile-gatherteamservice.pubxml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />

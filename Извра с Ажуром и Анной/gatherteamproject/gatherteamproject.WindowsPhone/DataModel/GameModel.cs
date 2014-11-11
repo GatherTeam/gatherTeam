@@ -1,9 +1,7 @@
-﻿
+﻿using System;
 using Newtonsoft.Json;
-using System;
 
-
-namespace gatherteamproject
+namespace gatherteamproject.DataModel
 {
 
     public class GameModel

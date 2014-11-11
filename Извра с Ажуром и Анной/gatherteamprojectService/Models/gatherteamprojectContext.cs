@@ -25,7 +25,8 @@ namespace gatherteamprojectService.Models
         {
         } 
 
-        public DbSet<TodoItem> TodoItems { get; set; }
+        //public DbSet<TodoItem> TodoItems { get; set; }
+        public DbSet<GameAddress> GameAddress { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

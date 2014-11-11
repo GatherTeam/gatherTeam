@@ -22,7 +22,7 @@ namespace gatherteamproject.Views
                 Format = GameModel.GameFormat.FiveToFive, 
                 GameAddress = new GameAddress(), 
                 GameName = "", 
-                Id = "1", 
+                id = "1", 
                 Time = "", 
                 Version = ""
             });*/

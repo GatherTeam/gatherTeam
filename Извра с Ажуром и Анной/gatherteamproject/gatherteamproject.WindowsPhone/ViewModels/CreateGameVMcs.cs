@@ -1,17 +1,10 @@
 ﻿using System.Collections.ObjectModel;
-using System.Linq;
-using gatherteamproject;
-using gatherteamproject;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
+using gatherteamproject.DataModel;
 using gatherteamproject.Views;
 using Microsoft.WindowsAzure.MobileServices;
 using Windows.UI.Popups;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Navigation;
 
 namespace gatherteamproject.ViewModels
 {
@@ -34,9 +27,29 @@ namespace gatherteamproject.ViewModels
                 if (items == null) return list;
                 foreach (var todoItem in items)
                 {
-                    list.Add(todoItem.Text);
+//                    list.Add(todoItem.Text);
                 }
                 return list;
+            }
+        }
+
+        public string GameMode
+        {
+            get { return _gameMode; }
+            set
+            {
+                _gameMode = value;
+                NotifyPropertyChanged("GameMode");
+            }
+        }
+
+        public string SelectedAddress
+        {
+            get { return _selectedAddress; }
+            set
+            {
+                _selectedAddress = value;
+                NotifyPropertyChanged("SelectedAddress");
             }
         }
 
@@ -58,13 +71,15 @@ namespace gatherteamproject.ViewModels
             }
         }
 
-        private MobileServiceCollection<TodoItem, TodoItem> items;
-        private IMobileServiceTable<TodoItem> todoTable = App.MobileService.GetTable<TodoItem>();
-
-        private async Task InsertTodoItem(TodoItem todoItem)
+        private MobileServiceCollection<GameAddress, GameAddress> items;
+        private IMobileServiceTable<GameAddress> todoTable = App.gathertearmserviceClient.GetTable<GameAddress>();
+        private string _selectedAddress;
+        private string _gameMode;
+        private async Task InsertTodoItem(GameAddress todoItem)
         {
             // This code inserts a new TodoItem into the database. When the operation completes
-            // and Mobile Services has assigned an Id, the item is added to the CollectionView
+            // and Mobile Services has assigned an id, the item is added to the CollectionView
+
             await todoTable.InsertAsync(todoItem);
             items.Add(todoItem);
         }
@@ -76,9 +91,9 @@ namespace gatherteamproject.ViewModels
             {
                 // This code refreshes the entries in the list view by querying the TodoItems table.
                 // The query excludes completed TodoItems
-                items = await todoTable
-                    .Where(todoItem => todoItem.Complete == false)
-                    .ToCollectionAsync();
+//                items = await todoTable
+//                    .Where(todoItem => todoItem.GameFieldX == 10.4)
+//                    .ToCollectionAsync();
             }
             catch (MobileServiceInvalidOperationException e)
             {
@@ -96,32 +111,32 @@ namespace gatherteamproject.ViewModels
             }
         }
 
-        private async Task UpdateCheckedTodoItem(TodoItem item)
+        private async Task UpdateCheckedTodoItem(GameAddress item)
         {
-            // This code takes a freshly completed TodoItem and updates the database. When the MobileService 
+            // This code takes a freshly completed TodoItem and updates the database. When the gathertearmserviceClient 
             // responds, the item is removed from the list 
             await todoTable.UpdateAsync(item);
             items.Remove(item);
-           // ListItems.Focus(Windows.UI.Xaml.FocusState.Unfocused);
+        }
+
+        private async void CheckTable()
+        {
         }
 
         private async void Create()
         {
-
-//            var todoItem = new TodoItem { Text = "Success2!" };
-//            await InsertTodoItem(todoItem);
-            
-           if (CreateEvent != null) CreateEvent();
-           /*  DataBase.LocalDB.InsertItem(new Models.GameModel
+            var newGame = new GameAddress();
+            newGame.GameFieldAddressString = "";
+            newGame.GameFieldX = 10.4f;
+            newGame.GameFieldY = 11.1f;
+            try
             {
-                Id = "ololo",
-                Format = GameModel.GameFormat.SixToSix,
-                GameAddress = new GameAddress(),
-                GameName = "thisis sparta!!!11!!",
-                Time = "11:22",
-                Version = "first"
-            });
-            DataBase.LocalDB.Push();*/
+                await InsertTodoItem(newGame);
+            }
+            catch (Exception e)
+            {
+            }
+           if (CreateEvent != null) CreateEvent();
         }
     }
 }

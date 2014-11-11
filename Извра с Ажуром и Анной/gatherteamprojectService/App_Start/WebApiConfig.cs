@@ -30,15 +30,15 @@ namespace gatherteamprojectService
     {
         protected override void Seed(gatherteamprojectContext context)
         {
-            List<TodoItem> todoItems = new List<TodoItem>
+            List<GameAddress> todoItems = new List<GameAddress>
             {
-                new TodoItem { Id = Guid.NewGuid().ToString(), Text = "First item", Complete = false },
-                new TodoItem { Id = Guid.NewGuid().ToString(), Text = "Second item", Complete = false },
+                new GameAddress {Id = "4343", GameFieldAddressString = "ololo", GameFieldX = 10f, GameFieldY = 15f, CreatedAt = new DateTimeOffset(), Deleted = false, UpdatedAt = new DateTimeOffset()},
+//                new GameAddress { id = Guid.NewGuid().ToString(), Text = "Second item ololo", Complete = false },
             };
 
-            foreach (TodoItem todoItem in todoItems)
+            foreach (GameAddress todoItem in todoItems)
             {
-                context.Set<TodoItem>().Add(todoItem);
+                context.Set<GameAddress>().Add(todoItem);
             }
 
             base.Seed(context);
