@@ -1,4 +1,5 @@
-﻿using gatherteamproject.Views;
+﻿using Windows.Phone.UI.Input;
+using gatherteamproject.Views;
 using Microsoft.WindowsAzure.MobileServices;
 using System;
 using System.Collections.Generic;
@@ -29,24 +30,6 @@ namespace gatherteamproject
         "https://gathertearmservice.azure-mobile.net/",
         "xpBqJnSgWCIHpDEEIAJxtwaMItuEZL51");
 
-        // http://go.microsoft.com/fwlink/?LinkId=290986&clcid=0x409
-//        public static Microsoft.WindowsAzure.MobileServices.MobileServiceClient gathertearmserviceClient = new Microsoft.WindowsAzure.MobileServices.MobileServiceClient(
-//        "https://gathertearmservice.azure-mobile.net/",
-//        "xpBqJnSgWCIHpDEEIAJxtwaMItuEZL51");
-
-
-        // This MobileServiceClient has been configured to communicate with your local
-        // test project for debugging purposes.
-//        public static MobileServiceClient gathertearmserviceClient = new MobileServiceClient(
-//            "http://localhost:50523"
-//        );
-
-        // This MobileServiceClient has been configured to communicate with your Mobile Service's url
-        // and application key. You're all set to start working with your Mobile Service!
-//        public static MobileServiceClient gathertearmserviceClient = new MobileServiceClient(
-//           "https://gathertearmservice.azure-mobile.net/", "xpBqJnSgWCIHpDEEIAJxtwaMItuEZL51"
-//        );
-
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -56,9 +39,21 @@ namespace gatherteamproject
             this.InitializeComponent();
             this.Suspending += OnSuspending;
 
+            HardwareButtons.BackPressed += HardwareButtons_BackPressed;
 #if !WINDOWS_PHONE_APP
                 RequestedTheme = ApplicationTheme.Light;    
 #endif
+        }
+
+        void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+
+            if (rootFrame != null && rootFrame.CanGoBack)
+            {
+                e.Handled = true;
+                rootFrame.GoBack();
+            }
         }
 
         /// <summary>

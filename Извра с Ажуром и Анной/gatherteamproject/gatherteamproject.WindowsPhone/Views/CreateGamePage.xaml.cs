@@ -16,10 +16,9 @@ namespace gatherteamproject.Views
         
         public CreateGamePage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
             var createGameVm = new CreateGameVM();
-            createGameVm.CreateEvent += CreateGameHandler;
-            this.DataContext = createGameVm;
+            DataContext = createGameVm;
 
         }
 
@@ -33,10 +32,5 @@ namespace gatherteamproject.Views
             
         }
 
-         private void CreateGameHandler()
-         {
-        }
-
-        
     }
 }

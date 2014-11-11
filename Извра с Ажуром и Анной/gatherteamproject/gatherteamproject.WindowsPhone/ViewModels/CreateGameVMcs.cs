@@ -1,6 +1,8 @@
 ﻿using System.Collections.ObjectModel;
 using System;
 using System.Threading.Tasks;
+using Windows.Devices.Geolocation;
+using Windows.Services.Maps;
 using gatherteamproject.DataModel;
 using gatherteamproject.Views;
 using Microsoft.WindowsAzure.MobileServices;
@@ -10,28 +12,27 @@ namespace gatherteamproject.ViewModels
 {
     public class CreateGameVM : BaseViewModel
     {
-
-        public event OpenPageDelegate CreateEvent;
-        private DelegateCommand _createCommand;
-
-        private readonly ObservableCollection<string> _gameFormats = new ObservableCollection<string> { "5x5", "6x6", "другой" };
-
-        public ObservableCollection<string> GameFormats { get { return _gameFormats; } }
-
-        public ObservableCollection<string> ListOfAddresses
+        public CreateGameVM()
         {
-            get
-            {
-//                UpdateDataBase();
-                var list = new ObservableCollection<string>();
-                if (items == null) return list;
-                foreach (var todoItem in items)
-                {
-//                    list.Add(todoItem.Text);
-                }
-                return list;
-            }
+            OpenMap();
         }
+
+        private DelegateCommand _createCommand;
+        private double _latitude;
+        private double _longitude;
+        private bool _isSuccess = false;
+        private readonly ObservableCollection<string> _gameFormats = new ObservableCollection<string> { "5x5", "6x6", "другой" };
+        private readonly IMobileServiceTable<GameAddress> _gameTable = App.gathertearmserviceClient.GetTable<GameAddress>();
+        private string _selectedAddress;
+        private string _gameMode;
+
+        //TODO сделать при установке приложения выбор города и заменить тут координаты на центр местного города
+        private const double SpbCenterX = 59.95;
+        private const double SpbCenterY = 30.36;
+
+        public Geopoint CenterPosition { get; set; }
+        public double ZoomLevel { get; set; }
+        public ObservableCollection<string> GameFormats { get { return _gameFormats; } }
 
         public string GameMode
         {
@@ -40,6 +41,7 @@ namespace gatherteamproject.ViewModels
             {
                 _gameMode = value;
                 NotifyPropertyChanged("GameMode");
+                NotifyPropertyChanged("IsReadyToCreateGame");
             }
         }
 
@@ -50,12 +52,23 @@ namespace gatherteamproject.ViewModels
             {
                 _selectedAddress = value;
                 NotifyPropertyChanged("SelectedAddress");
+                NotifyPropertyChanged("IsReadyToCreateGame");
             }
         }
 
-        private async void UpdateDataBase()
+        public bool IsReadyToCreateGame
         {
-            await RefreshTodoItems();
+            get { return (!string.IsNullOrWhiteSpace(SelectedAddress) && !string.IsNullOrWhiteSpace(GameMode)); }
+        }
+
+        public bool IsVisibleIcon
+        {
+            get { return _isSuccess; }
+            set
+            {
+                _isSuccess = value;
+                NotifyPropertyChanged("IsVisibleIcon");
+            }
         }
 
         public DelegateCommand CreateCommand
@@ -64,78 +77,87 @@ namespace gatherteamproject.ViewModels
             {
                 if (_createCommand == null)
                 {
-                    _createCommand = new DelegateCommand(o => Create());
+                    _createCommand = new DelegateCommand(o => CreateGame());
                 }
 
                 return _createCommand;
             }
         }
 
-        private MobileServiceCollection<GameAddress, GameAddress> items;
-        private IMobileServiceTable<GameAddress> todoTable = App.gathertearmserviceClient.GetTable<GameAddress>();
-        private string _selectedAddress;
-        private string _gameMode;
-        private async Task InsertTodoItem(GameAddress todoItem)
+        private async Task InsertGameAddress(GameAddress gameAddress)
         {
-            // This code inserts a new TodoItem into the database. When the operation completes
-            // and Mobile Services has assigned an id, the item is added to the CollectionView
-
-            await todoTable.InsertAsync(todoItem);
-            items.Add(todoItem);
+            await _gameTable.InsertAsync(gameAddress);
         }
-
-        private async Task RefreshTodoItems()
+        
+        private async void CreateGame()
         {
-            MobileServiceInvalidOperationException exception = null;
             try
             {
-                // This code refreshes the entries in the list view by querying the TodoItems table.
-                // The query excludes completed TodoItems
-//                items = await todoTable
-//                    .Where(todoItem => todoItem.GameFieldX == 10.4)
-//                    .ToCollectionAsync();
+                _isSuccess = true;
+                GetPlace();
+                if (!_isSuccess) return;
+                var newGame = new GameAddress();
+                newGame.Id = Guid.NewGuid().ToString();
+                newGame.GameFieldAddressString = SelectedAddress;
+                newGame.GameFieldX = (float)_latitude;
+                newGame.GameFieldY = (float)_longitude;
+                await InsertGameAddress(newGame);
             }
-            catch (MobileServiceInvalidOperationException e)
+            catch
             {
-                exception = e;
+                WriteMessage("Что-то пошло не так");
             }
 
-            if (exception != null)
-            {
-                await new MessageDialog(exception.Message, "Error loading items").ShowAsync();
-            }
-            else
-            {
-                //ListItems.ItemsSource = items;
-                //this._createComman.IsEnabled = true;
-            }
         }
 
-        private async Task UpdateCheckedTodoItem(GameAddress item)
+        private async void OpenMap()
         {
-            // This code takes a freshly completed TodoItem and updates the database. When the gathertearmserviceClient 
-            // responds, the item is removed from the list 
-            await todoTable.UpdateAsync(item);
-            items.Remove(item);
+            var myGeolocator = new Geolocator();
+            var myGeoposition = await myGeolocator.GetGeopositionAsync();
+            var myGeocoordinate = myGeoposition.Coordinate;
+            var basicGeoposition = new BasicGeoposition();
+            basicGeoposition.Latitude = myGeocoordinate.Latitude;
+            basicGeoposition.Longitude = myGeocoordinate.Longitude;
+            var myPosition = new Geopoint(basicGeoposition);
+
+            ZoomLevel = 15;
+            CenterPosition = myPosition;
+            NotifyPropertyChanged("ZoomLevel");
+            NotifyPropertyChanged("CenterPosition");
         }
 
-     
-
-        private async void Create()
+        private async void GetPlace()
         {
-            var newGame = new GameAddress();
-            newGame.Id = Guid.NewGuid().ToString();
-            newGame.GameFieldAddressString = "AddressString";
-            newGame.GameFieldX = 10f;
-            newGame.GameFieldY = 11f;
-            try
+            var queryHint = new BasicGeoposition();
+            queryHint.Latitude = SpbCenterX;
+            queryHint.Longitude = SpbCenterY;
+            var hintPoint = new Geopoint(queryHint);
+            var result = await MapLocationFinder.FindLocationsAsync(
+                                    SelectedAddress,
+                                    hintPoint,
+                                    3);
+            if (result.Status == MapLocationFinderStatus.Success)
             {
-                await InsertTodoItem(newGame);
+                if (result.Locations.Count == 0)
+                {
+                    WriteMessage("Не удалось обнаружить адрес. Не Кержаковьте, пожалуйста");
+                    IsVisibleIcon = false;
+                    return;
+                }
+                _latitude = result.Locations[0].Point.Position.Latitude;
+                _longitude = result.Locations[0].Point.Position.Longitude;
+                CenterPosition = new Geopoint(new BasicGeoposition {Latitude = _latitude, Longitude = _longitude});
+                NotifyPropertyChanged("CenterPosition");
+                IsVisibleIcon = true;
+                return;
             }
-            catch (Exception e)
-            {
-            }
-           if (CreateEvent != null) CreateEvent();
+            IsVisibleIcon = false;
+        }
+
+        private void WriteMessage(string msg)
+        {
+            var dialog = new MessageDialog(msg);
+            dialog.ShowAsync();
         }
     }
 }
