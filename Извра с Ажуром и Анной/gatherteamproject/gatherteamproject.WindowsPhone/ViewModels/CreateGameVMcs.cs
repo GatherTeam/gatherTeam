@@ -12,17 +12,14 @@ namespace gatherteamproject.ViewModels
 {
     public class CreateGameVM : BaseViewModel
     {
-        public CreateGameVM()
-        {
-            OpenMap();
-        }
+        public event OpenPageDelegate OpenMapEvent;
+        private DelegateCommand _openMapCommand;
 
         private DelegateCommand _createCommand;
         private double _latitude;
         private double _longitude;
-        private bool _isSuccess = false;
         private readonly ObservableCollection<string> _gameFormats = new ObservableCollection<string> { "5x5", "6x6", "другой" };
-        private readonly IMobileServiceTable<GameAddress> _gameTable = App.gathertearmserviceClient.GetTable<GameAddress>();
+        private readonly IMobileServiceTable<FieldAddress> _fieldTable = App.gathertearmserviceClient.GetTable<FieldAddress>();
         private string _selectedAddress;
         private string _gameMode;
 
@@ -30,8 +27,8 @@ namespace gatherteamproject.ViewModels
         private const double SpbCenterX = 59.95;
         private const double SpbCenterY = 30.36;
 
-        public Geopoint CenterPosition { get; set; }
-        public double ZoomLevel { get; set; }
+//        public Geopoint CenterPosition { get; set; }
+//        public double ZoomLevel { get; set; }
         public ObservableCollection<string> GameFormats { get { return _gameFormats; } }
 
         public string GameMode
@@ -61,15 +58,6 @@ namespace gatherteamproject.ViewModels
             get { return (!string.IsNullOrWhiteSpace(SelectedAddress) && !string.IsNullOrWhiteSpace(GameMode)); }
         }
 
-        public bool IsVisibleIcon
-        {
-            get { return _isSuccess; }
-            set
-            {
-                _isSuccess = value;
-                NotifyPropertyChanged("IsVisibleIcon");
-            }
-        }
 
         public DelegateCommand CreateCommand
         {
@@ -84,24 +72,34 @@ namespace gatherteamproject.ViewModels
             }
         }
 
-        private async Task InsertGameAddress(GameAddress gameAddress)
+        public DelegateCommand OpenMapCommand
         {
-            await _gameTable.InsertAsync(gameAddress);
+            get
+            {
+                if (_openMapCommand == null)
+                {
+                    _openMapCommand = new DelegateCommand(o => OpenMap());
+                }
+
+                return _openMapCommand;
+            }
+        }
+
+        private void OpenMap()
+        {
+            if (OpenMapEvent != null) OpenMapEvent();
+        }
+
+        private async Task InsertFieldAddress(FieldAddress fieldAddress)
+        {
+            await _fieldTable.InsertAsync(fieldAddress);
         }
         
         private async void CreateGame()
         {
             try
             {
-                _isSuccess = true;
-                GetPlace();
-                if (!_isSuccess) return;
-                var newGame = new GameAddress();
-                newGame.Id = Guid.NewGuid().ToString();
-                newGame.GameFieldAddressString = SelectedAddress;
-                newGame.GameFieldX = (float)_latitude;
-                newGame.GameFieldY = (float)_longitude;
-                await InsertGameAddress(newGame);
+                CreateField();
             }
             catch
             {
@@ -109,24 +107,19 @@ namespace gatherteamproject.ViewModels
             }
 
         }
-
-        private async void OpenMap()
+        //todo сперва надо проверять, существует ли поле с указанными координатами/адресом в нашей базе
+        private async void CreateField()
         {
-            var myGeolocator = new Geolocator();
-            var myGeoposition = await myGeolocator.GetGeopositionAsync();
-            var myGeocoordinate = myGeoposition.Coordinate;
-            var basicGeoposition = new BasicGeoposition();
-            basicGeoposition.Latitude = myGeocoordinate.Latitude;
-            basicGeoposition.Longitude = myGeocoordinate.Longitude;
-            var myPosition = new Geopoint(basicGeoposition);
-
-            ZoomLevel = 15;
-            CenterPosition = myPosition;
-            NotifyPropertyChanged("ZoomLevel");
-            NotifyPropertyChanged("CenterPosition");
+            await GetPlaceCoordinates();
+            var newField = new FieldAddress();
+            newField.Id = Guid.NewGuid().ToString();
+            newField.Address = SelectedAddress;
+            newField.CoordX = (float)_latitude;
+            newField.CoordY = (float)_longitude;
+            await InsertFieldAddress(newField);
         }
 
-        private async void GetPlace()
+        private async Task GetPlaceCoordinates()
         {
             var queryHint = new BasicGeoposition();
             queryHint.Latitude = SpbCenterX;
@@ -141,17 +134,13 @@ namespace gatherteamproject.ViewModels
                 if (result.Locations.Count == 0)
                 {
                     WriteMessage("Не удалось обнаружить адрес. Не Кержаковьте, пожалуйста");
-                    IsVisibleIcon = false;
                     return;
                 }
                 _latitude = result.Locations[0].Point.Position.Latitude;
                 _longitude = result.Locations[0].Point.Position.Longitude;
-                CenterPosition = new Geopoint(new BasicGeoposition {Latitude = _latitude, Longitude = _longitude});
+//                CenterPosition = new Geopoint(new BasicGeoposition {Latitude = _latitude, Longitude = _longitude});
                 NotifyPropertyChanged("CenterPosition");
-                IsVisibleIcon = true;
-                return;
             }
-            IsVisibleIcon = false;
         }
 
         private void WriteMessage(string msg)

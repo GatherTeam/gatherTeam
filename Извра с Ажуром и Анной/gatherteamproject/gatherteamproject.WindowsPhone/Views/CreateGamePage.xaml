@@ -33,19 +33,10 @@
 
             <ComboBox Grid.Row="0" PlaceholderText="Формат игры" Style="{StaticResource ComboBoxStyle}" ItemsSource="{Binding GameFormats}" SelectedItem="{Binding GameMode, Mode=TwoWay}"/>
             <TextBox Grid.Row="1" PlaceholderText="Адрес"  Text="{Binding SelectedAddress, Mode=TwoWay}" InputScope="NativeScript" />
+            <Button Command="{Binding OpenMapCommand}" Grid.Row="4" Style="{StaticResource ButtonStyle}" Content="Карта" FontSize="30"/>
             <TimePicker Grid.Row="2" Style="{StaticResource TimePickerStyle}"/>
             <DatePicker Grid.Row="3" Style="{StaticResource DatePickerStyle}" />
-            <Button Command="{Binding CreateCommand}" Content="Создать" Grid.Row="5" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Right"   VerticalAlignment="Top" FontSize="30" IsEnabled="{Binding IsReadyToCreateGame}" />
-            <Maps:MapControl LandmarksVisible="True" Height="200" MapServiceToken=" 	Ap4Jref90Aqr0pwB6Bt_bzU65dbywSYxzDrSJX6V5AGcKNWAVaI7NaTxI3gSJegd" Center="{Binding Path=CenterPosition, Mode=TwoWay}" ZoomLevel="{Binding Path=ZoomLevel, Mode=TwoWay}" Grid.Row="4" VerticalAlignment="Top">
-                <Image Source="../Assets/26BD-Football .48.png">
-                    <Maps:MapControl.Location>
-                        <Binding Path="CenterPosition" />
-                    </Maps:MapControl.Location>
-                    <Image.Visibility>
-                        <Binding Path="IsVisibleIcon" Converter="{StaticResource BoolToVisibilityConverter}"/>
-                    </Image.Visibility>
-                </Image>
-            </Maps:MapControl>
+            <Button Command="{Binding CreateCommand}" Content="Создать" Grid.Row="4" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Right"   VerticalAlignment="Top" FontSize="30" IsEnabled="{Binding IsReadyToCreateGame}" />
         </Grid>
     </Grid>
 </Page>

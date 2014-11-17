@@ -88,6 +88,7 @@
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="DataModel\DataGroup.cs" />
     <Compile Include="DataModel\FakeSourceData.cs" />
+    <Compile Include="DataModel\FieldAddress.cs" />
     <Compile Include="DataModel\GameAddress.cs" />
     <Compile Include="DataModel\GameModel.cs" />
     <Compile Include="DataModel\TimeGroup.cs" />
@@ -110,6 +111,7 @@
       <SubType>
       </SubType>
     </Compile>
+    <Compile Include="ViewModels\MapViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs">
       <SubType>
       </SubType>
@@ -131,6 +133,9 @@
     </Compile>
     <Compile Include="Views\EntrancePage.xaml.cs">
       <DependentUpon>EntrancePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MapPage.xaml.cs">
+      <DependentUpon>MapPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
@@ -172,6 +177,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\EntrancePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MapPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
