@@ -1,8 +1,4 @@
-﻿//using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
-//using Microsoft.WindowsAzure.MobileServices.Sync;
-
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
-using Windows.UI.Xaml.Controls;
+﻿using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using gatherteamproject.ViewModels;
 

@@ -1,18 +1,17 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 
 namespace gatherteamproject.DataModel
 {
     public class GameAddress
     {
-        //[JsonProperty(PropertyName = "Id")]
         public string Id { get; set; }
-        [JsonProperty(PropertyName = "gameFieldAddressString")]
         public string GameFieldAddressString { get; set; }
-        //public Geopoint Geoposition { get; set; }
-        [JsonProperty(PropertyName = "GameFieldX")]
         public float GameFieldX {get; set;}
-        [JsonProperty(PropertyName = "GameFieldY")]
         public float GameFieldY { get; set; }
- 
+        public int Author { get; set; }
+        public DateTimeOffset Time { get; set; }
+        public DateTimeOffset Date { get; set; }
+        public string GameMode { get; set; }
     }
 }

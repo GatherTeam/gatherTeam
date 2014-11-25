@@ -19,7 +19,8 @@ namespace gatherteamproject.ViewModels
         private double _latitude;
         private double _longitude;
         private readonly ObservableCollection<string> _gameFormats = new ObservableCollection<string> { "5x5", "6x6", "другой" };
-        private readonly IMobileServiceTable<FieldAddress> _fieldTable = App.gathertearmserviceClient.GetTable<FieldAddress>();
+        private readonly IMobileServiceTable<FieldAddress> _fieldTable = App.MobileService.GetTable<FieldAddress>();
+        private readonly IMobileServiceTable<GameAddress> _gameTable = App.MobileService.GetTable<GameAddress>();
         private string _selectedAddress;
         private string _gameMode;
 
@@ -31,8 +32,7 @@ namespace gatherteamproject.ViewModels
 //        public double ZoomLevel { get; set; }
         public ObservableCollection<string> GameFormats { get { return _gameFormats; } }
 
-        public string GameMode
-        {
+        public string GameMode{
             get { return _gameMode; }
             set
             {
@@ -41,6 +41,9 @@ namespace gatherteamproject.ViewModels
                 NotifyPropertyChanged("IsReadyToCreateGame");
             }
         }
+
+        public DateTimeOffset Time { get; set; }
+        public DateTimeOffset Date { get; set; }
 
         public string SelectedAddress
         {
@@ -94,12 +97,18 @@ namespace gatherteamproject.ViewModels
         {
             await _fieldTable.InsertAsync(fieldAddress);
         }
+
+        private async Task InsertGameAddress(GameAddress gameAddress)
+        {
+            await _gameTable.InsertAsync(gameAddress);
+        }
         
         private async void CreateGame()
         {
             try
             {
                 CreateField();
+                CreateNewGame();
             }
             catch
             {
@@ -107,12 +116,25 @@ namespace gatherteamproject.ViewModels
             }
 
         }
+
+        private async void CreateNewGame()
+        {
+            var newGame = new GameAddress();
+            newGame.GameFieldX = (float) _latitude;
+            newGame.GameFieldY = (float) _longitude;
+            newGame.GameFieldAddressString = SelectedAddress;
+            newGame.Time = Time;
+            newGame.Date = Date;
+            newGame.GameMode = GameMode;
+            // todo надо что-то придумать с идентификатором пользователя
+            newGame.Author = 5;
+            await InsertGameAddress(newGame);
+        }
         //todo сперва надо проверять, существует ли поле с указанными координатами/адресом в нашей базе
         private async void CreateField()
         {
             await GetPlaceCoordinates();
             var newField = new FieldAddress();
-            newField.Id = Guid.NewGuid().ToString();
             newField.Address = SelectedAddress;
             newField.CoordX = (float)_latitude;
             newField.CoordY = (float)_longitude;
