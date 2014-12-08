@@ -40,7 +40,7 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <Button Content="Выбрать игру" Style="{StaticResource ButtonStyle}" Grid.Row ="0" FontSize="40" ></Button>
+                            <Button Content="Выбрать игру" Command="{Binding SelectGameCommand}" Style="{StaticResource ButtonStyle}" Grid.Row ="0" FontSize="40" ></Button>
                             <Button Content="Выбрать турнир" Style="{StaticResource ButtonStyle}" Grid.Row ="1" FontSize="40"></Button>
                         </Grid>
                     </PivotItem>

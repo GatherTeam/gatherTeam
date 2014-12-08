@@ -96,7 +96,11 @@ namespace gatherteamproject.ViewModels
             if (OpenSettingsPage != null) OpenSettingsPage();
         }
 
-        public IEnumerable<DataGroup> OpenSelectGame()
+
+        public void OpenSelectGame() {
+            if (OpenSelectGamePage != null) OpenSelectGamePage();
+        }
+        /*public IEnumerable<DataGroup> OpenSelectGame()
         {
             IEnumerable<DataGroup> groups =
                 from item in FakeSourceData.GetData()
@@ -116,7 +120,7 @@ namespace gatherteamproject.ViewModels
                     };
 
             return groups;
-        }
+        }*/
 
         private void CreateTournament()
         {

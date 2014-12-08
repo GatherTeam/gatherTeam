@@ -7,13 +7,8 @@ using System.Threading.Tasks;
 
 namespace gatherteamproject
 {
-    class TimeGroup : ObservableCollection<FakeSourceData>
+   public class TimeGroup 
     {
-        public TimeGroup(IEnumerable<FakeSourceData> items)
-            : base(items)
-        {
-        }
-
         public string Time { get; set; }
 
     }

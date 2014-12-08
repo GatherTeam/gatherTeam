@@ -3,28 +3,81 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:gatherteamproject"
+    xmlns:sel="using:gatherteamproject.ViewModels"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Page.Resources>
+    <!--<Page.Resources>
         <CollectionViewSource
             x:Key="src"
             IsSourceGrouped="True"
             Source="{Binding SelectGameCommand}"/>
+    </Page.Resources>-->
+
+    <Page.Resources>
+        <CollectionViewSource
+            x:Key="src"
+            IsSourceGrouped="True"/>
+           <!-- Source="{Binding SelectGameCommand}"/>-->
+        <sel:TypeBasedTemplateSelector
+            x:Key="typeSelector">
+            <sel:TypeBasedTemplateSelector.DefaultTemplate>
+                <DataTemplate>
+                    <TextBlock
+                        Text="{Binding Address}"
+                        Height="40"
+                        FontSize="20" />
+                </DataTemplate>
+            </sel:TypeBasedTemplateSelector.DefaultTemplate>
+
+            <DataTemplate
+                x:Key="TimeGroup">
+                <TextBlock
+                    Text="{Binding Time}"
+                    FontWeight="Bold"
+                    Height="40"
+                    FontSize="24" />
+            </DataTemplate>
+        </sel:TypeBasedTemplateSelector>
     </Page.Resources>
 
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-
+        </Grid.RowDefinitions> 
         <!--TitlePanel содержит имя приложения и заголовок страницы-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="Gather Team" Style="{StaticResource TitleTextBlockStyle}"/>
             <TextBlock Text="Выбор игры" HorizontalAlignment="Left" Style="{StaticResource HeaderTextBlockStyle}"/>
         </StackPanel>
+        <ListView
+            Grid.Row="1"
+            ItemTemplateSelector="{StaticResource typeSelector}"
+            ItemsSource="{Binding Source={StaticResource src}}">
+            <ListView.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock
+                                Text="{Binding Date}"
+                                FontSize="40" />
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                </GroupStyle>
+            </ListView.GroupStyle>
+        </ListView>
+    </Grid>
+</Page>
+
+
+<!--<Grid x:Name="LayoutRoot" Background="Transparent">
+       
+
+       
+
+        
 
         <Grid>
             <ListView
@@ -69,4 +122,4 @@
             </ListView>
         </Grid>
     </Grid>
-</Page>
+</Page>-->

@@ -18,6 +18,7 @@ namespace gatherteamproject.ViewModels
         private DelegateCommand _createCommand;
         private double _latitude;
         private double _longitude;
+        private string _fieldID;
         private readonly ObservableCollection<string> _gameFormats = new ObservableCollection<string> { "5x5", "6x6", "другой" };
         private readonly IMobileServiceTable<FieldAddress> _fieldTable = App.MobileService.GetTable<FieldAddress>();
         private readonly IMobileServiceTable<GameAddress> _gameTable = App.MobileService.GetTable<GameAddress>();
@@ -42,7 +43,7 @@ namespace gatherteamproject.ViewModels
             }
         }
 
-        public DateTimeOffset Time { get; set; }
+        public DateTime Time { get; set; }
         public DateTimeOffset Date { get; set; }
 
         public string SelectedAddress
@@ -102,6 +103,8 @@ namespace gatherteamproject.ViewModels
         {
             await _gameTable.InsertAsync(gameAddress);
         }
+
+
         
         private async void CreateGame()
         {
@@ -119,13 +122,16 @@ namespace gatherteamproject.ViewModels
 
         private async void CreateNewGame()
         {
+            //await CreateField();
             var newGame = new GameAddress();
-            newGame.GameFieldX = (float) _latitude;
-            newGame.GameFieldY = (float) _longitude;
-            newGame.GameFieldAddressString = SelectedAddress;
+           // newGame.GameFieldX = (float) _latitude;
+            //newGame.GameFieldY = (float) _longitude;
+            //newGame.GameFieldAddressString = SelectedAddress;
+            newGame.FieldID = _fieldID;
             newGame.Time = Time;
             newGame.Date = Date;
             newGame.GameMode = GameMode;
+            
             // todo надо что-то придумать с идентификатором пользователя
             newGame.Author = 5;
             await InsertGameAddress(newGame);
@@ -135,10 +141,12 @@ namespace gatherteamproject.ViewModels
         {
             await GetPlaceCoordinates();
             var newField = new FieldAddress();
+            _fieldID = newField.Id;
             newField.Address = SelectedAddress;
             newField.CoordX = (float)_latitude;
             newField.CoordY = (float)_longitude;
             await InsertFieldAddress(newField);
+            
         }
 
         private async Task GetPlaceCoordinates()

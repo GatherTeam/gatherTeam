@@ -86,7 +86,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
-    <Compile Include="DataModel\DataGroup.cs" />
+    <Compile Include="DataModel\DateGroup.cs" />
     <Compile Include="DataModel\FakeSourceData.cs" />
     <Compile Include="DataModel\FieldAddress.cs" />
     <Compile Include="DataModel\GameAddress.cs" />
@@ -124,6 +124,7 @@
       <SubType>
       </SubType>
     </Compile>
+    <Compile Include="ViewModels\TypeBasedTemplateSelector.cs" />
     <Compile Include="ViewModels\UserViewModel.cs">
       <SubType>
       </SubType>
