@@ -44,6 +44,9 @@ namespace gatherteamproject.Views
             var cvs = (CollectionViewSource)Resources["src"];
             cvs.Source = gr.ToList();*/
         }
+
+
+
         public static IEnumerable<object> ItemsForTimeGroup(IGrouping<string, FakeSourceData> timeGroup)
         {
             object[] groupItemAsList = { new TimeGroup { Time = timeGroup.Key } };

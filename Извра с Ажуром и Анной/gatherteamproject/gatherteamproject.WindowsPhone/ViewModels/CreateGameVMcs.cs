@@ -103,8 +103,6 @@ namespace gatherteamproject.ViewModels
         {
             await _gameTable.InsertAsync(gameAddress);
         }
-
-
         
         private async void CreateGame()
         {
