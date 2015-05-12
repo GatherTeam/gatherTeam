@@ -24,6 +24,7 @@ namespace gatherteamproject.ViewModels
         private readonly IMobileServiceTable<GameAddress> _gameTable = App.MobileService.GetTable<GameAddress>();
         private string _selectedAddress;
         private string _gameMode;
+        
 
         //TODO сделать при установке приложения выбор города и заменить тут координаты на центр местного города
         private const double SpbCenterX = 59.95;
@@ -42,9 +43,9 @@ namespace gatherteamproject.ViewModels
                 NotifyPropertyChanged("IsReadyToCreateGame");
             }
         }
-
+        private DateTimeOffset CurrentDate = DateTimeOffset.Now;
         public DateTime Time { get; set; }
-        public DateTimeOffset Date { get; set; }
+        public DateTimeOffset Date { get { return CurrentDate; } set { } }
 
         public string SelectedAddress
         {
@@ -110,6 +111,7 @@ namespace gatherteamproject.ViewModels
             {
                 CreateField();
                 CreateNewGame();
+                WriteMessage("Игра создана");
             }
             catch
             {
