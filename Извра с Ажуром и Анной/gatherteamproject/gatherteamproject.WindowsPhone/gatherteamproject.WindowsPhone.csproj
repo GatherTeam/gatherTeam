@@ -85,6 +85,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Common\NavigationHelper.cs" />
+    <Compile Include="Common\ObservableDictionary.cs" />
+    <Compile Include="Common\RelayCommand.cs" />
+    <Compile Include="Common\SuspensionManager.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="DataModel\DateGroup.cs" />
     <Compile Include="DataModel\FakeSourceData.cs" />
@@ -93,6 +97,9 @@
     <Compile Include="DataModel\GameModel.cs" />
     <Compile Include="DataModel\TimeGroup.cs" />
     <Compile Include="DataModel\TodoItem.cs" />
+    <Compile Include="DataModel\Tournaments\Player.cs" />
+    <Compile Include="DataModel\Tournaments\Team.cs" />
+    <Compile Include="DataModel\Tournaments\Tournament.cs" />
     <Compile Include="DataModel\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs">
@@ -150,6 +157,15 @@
     <Compile Include="Views\StartPage.xaml.cs">
       <DependentUpon>StartPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Tournaments\CreateTeam.xaml.cs">
+      <DependentUpon>CreateTeam.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tournaments\CreateTournament.xaml.cs">
+      <DependentUpon>CreateTournament.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tournaments\Tournaments.xaml.cs">
+      <DependentUpon>Tournaments.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserPage.xaml.cs">
       <DependentUpon>UserPage.xaml</DependentUpon>
     </Compile>
@@ -201,6 +217,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Tournaments\CreateTeam.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Tournaments\CreateTournament.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Tournaments\Tournaments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\UserPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -223,6 +251,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>
